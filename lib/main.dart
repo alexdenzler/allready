@@ -23,6 +23,7 @@ class Home extends StatelessWidget {
       backgroundColor: Colors.blueGrey[300],
     ), // appBar
       body: Container(
+        padding: EdgeInsets.fromLTRB(20,0,20,410),
         color: Colors.blueGrey[300],
         child: FlatButton(
           onPressed: () {
