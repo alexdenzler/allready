@@ -22,7 +22,8 @@ class Home extends StatelessWidget {
       centerTitle: true,
       backgroundColor: Colors.blueGrey[300],
     ), // appBar
-      body: Center(
+      body: Container(
+        color: Colors.blueGrey[300],
         child: FlatButton(
           onPressed: () {
             print('click');
