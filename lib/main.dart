@@ -10,7 +10,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-        'AllReady',
+        'MaybeReady',
         style: TextStyle(
           fontSize: 30.0,
           fontWeight: FontWeight.bold,
