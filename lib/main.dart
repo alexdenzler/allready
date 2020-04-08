@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 void main() => runApp(MaterialApp(
-  home: Home(),
+  home: HomePage(),
 ));
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class Home extends StatelessWidget {
+class HomePage extends StatelessWidget {
   @override
-
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -25,7 +24,6 @@ class Home extends StatelessWidget {
       centerTitle: true,
       backgroundColor: Colors.blueGrey[300],
     ),
-
       // Creates a container with Atrium Picture that you can click on
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
@@ -33,12 +31,14 @@ class Home extends StatelessWidget {
         color: Colors.blueGrey[300],
         child: RaisedButton(
           onPressed: () {
-            print('click');
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ItemTypePage())
+              );
           },
           child: Image.network('https://themacweekly.com/wp-content/uploads/2018/01/Atrium_news_Rait18-1024x613.jpg'),
           ),
       ),
-
       // Creates a button in the middle of the screen that says "Click Here to Order"
         // body: Center(
         //   child: RaisedButton(
@@ -48,6 +48,25 @@ class Home extends StatelessWidget {
         //     child: Text('Click Here To Order'),
         //     ),
         //     )
+    );
+  }
+}
+
+class ItemTypePage extends StatelessWidget {
+  @override 
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Items Page"),
+      ),
+      body: Center(
+        child: RaisedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text("Go Back to Home Screen."),
+        ),
+      ),
     );
   }
 }
