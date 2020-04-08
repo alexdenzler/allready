@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -57,16 +59,79 @@ class ItemTypePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Items Page"),
+        title: Text("AllReady"),
       ),
-      body: Center(
-        child: RaisedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Text("Go Back to Home Screen."),
-        ),
-      ),
+      body: getListView(),
     );
   }
 }
+
+Widget getListView() {
+  var listView = ListView(
+    children: <Widget> [
+
+      ListTile(
+        title: Text("Bread"),
+        // onTap: () {
+        //   Navigator.push(
+        //     context,
+        //     MaterialPageRoute(builder: (context) => BreadPage())
+        //   );
+        // },
+      ),
+
+      ListTile(
+        title: Text("Meat"),
+      ),
+      ListTile(
+        title: Text("Cheese"),
+      ),
+      ListTile(
+        title: Text("Toppings"),
+      ),
+      ListTile(
+        title: Text("Sauce"),
+      ),
+    ],
+  );
+  return listView;
+}
+
+  class BreadPage extends StatelessWidget {
+    @override 
+    Widget build(BuildContext context) {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text("AllReady"),
+        ),
+        body: Center(
+          child: RaisedButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text("Go Back to Home Screen."),
+          ),
+        ),
+      );
+    }
+  }
+
+// Generic Code for a new page
+  // class ItemTypePage extends StatelessWidget {
+  //   @override 
+  //   Widget build(BuildContext context) {
+  //     return Scaffold(
+  //       appBar: AppBar(
+  //         title: Text("AllReady"),
+  //       ),
+  //       body: Center(
+  //         child: RaisedButton(
+  //           onPressed: () {
+  //             Navigator.pop(context);
+  //           },
+  //           child: Text("Go Back to Home Screen."),
+  //         ),
+  //       ),
+  //     );
+  //   }
+  // }
