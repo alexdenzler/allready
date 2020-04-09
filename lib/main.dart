@@ -15,7 +15,6 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey[350],
       appBar: AppBar(
         title: Text(
         'AllReady',
@@ -29,13 +28,12 @@ class HomePage extends StatelessWidget {
       ),
       centerTitle: true,
       backgroundColor: Colors.blueGrey[300],
-      elevation: 0.0,
     ),
       // Creates a container with Atrium Picture that you can click on
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
         margin: EdgeInsets.all(10.0),
-        //color: Colors.blueGrey[300],
+        color: Colors.blueGrey[300],
         child: RaisedButton(
           onPressed: () {
             Navigator.push(
