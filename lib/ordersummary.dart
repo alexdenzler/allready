@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'main.dart';
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Order Summary Page
@@ -24,6 +25,19 @@ import 'package:cloud_firestore/cloud_firestore.dart';
       backgroundColor: Colors.blueGrey[300],
       ),
       //body: (put order summary here using database)
+      body: RaisedButton(
+        child: const Text('PlaceHolder Button that takes you back to HomePage (will eventually display order on this page)',
+        style: TextStyle(fontSize: 20)),
+        color: Colors.red[600],
+        textColor: Colors.white,
+        elevation: 5,
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => HomePage())
+          );
+        },
+      ),
     );
     }
   }
