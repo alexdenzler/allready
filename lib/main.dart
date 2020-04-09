@@ -205,29 +205,55 @@ class ItemTypePage extends StatelessWidget {
       return Scaffold(
         appBar: AppBar(
         title: Text(
-        'AllReady',
-        style: TextStyle(
-          fontSize: 30.0,
-          fontWeight: FontWeight.bold,
-          letterSpacing: 2.0,
-          color: Colors.red[600],
-          fontFamily: 'ShadowsIntoLight',
-        ),
-      ),
-      centerTitle: true,
-      backgroundColor: Colors.blueGrey[300],
-    ),
-        body: Center(
-          child: RaisedButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: Text("You are on the meat page. Press to go back."),
+          'AllReady',
+          style: TextStyle(
+            fontSize: 30.0,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 2.0,
+            color: Colors.red[600],
+            fontFamily: 'ShadowsIntoLight',
           ),
         ),
+      centerTitle: true,
+      backgroundColor: Colors.blueGrey[300],
+        ),
+        body: getMeatList(context),
       );
     }
   }
+  // Makes list of buttons for MeatPage
+  Widget getMeatList(BuildContext context) {
+  var listView = ListView(
+    children: <Widget> [
+      // Bacon
+      ListTile(
+        title: Text("Bacon"),
+        onTap: () {},
+      ),
+      // Ham
+      ListTile(
+        title: Text("Ham"),
+        onTap: () {},
+      ),
+      // Roast Beef
+      ListTile(
+        title: Text("Roast Beef"),
+        onTap: () {},
+      ),
+      // Salami
+      ListTile(
+        title: Text("Salami"),
+        onTap: () {},
+      ),
+      // Turkey
+      ListTile(
+        title: Text("Turkey"),
+        onTap: () {},
+      ),
+    ],
+  );
+  return listView;
+}
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // CheesePage
@@ -250,17 +276,43 @@ class ItemTypePage extends StatelessWidget {
       centerTitle: true,
       backgroundColor: Colors.blueGrey[300],
     ),
-        body: Center(
-          child: RaisedButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: Text("You are on the cheese page. Press to go back."),
-          ),
-        ),
+        body: getCheeseList(context),
       );
     }
   }
+  // Makes list of buttons for Cheese Page
+  Widget getCheeseList(BuildContext context) {
+  var listView = ListView(
+    children: <Widget> [
+      // American
+      ListTile(
+        title: Text("American"),
+        onTap: () {},
+      ),
+      // Cheddar
+      ListTile(
+        title: Text("Cheddar"),
+        onTap: () {},
+      ),
+      // Pepperjack
+      ListTile(
+        title: Text("Pepperjack"),
+        onTap: () {},
+      ),
+      // Provolone
+      ListTile(
+        title: Text("Provolone"),
+        onTap: () {},
+      ),
+      // Swiss
+      ListTile(
+        title: Text("Swiss"),
+        onTap: () {},
+      ),
+    ],
+  );
+  return listView;
+}
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ToppingsPage
@@ -283,17 +335,48 @@ class ItemTypePage extends StatelessWidget {
       centerTitle: true,
       backgroundColor: Colors.blueGrey[300],
     ),
-        body: Center(
-          child: RaisedButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: Text("You are on the toppings page. Press to go back."),
-          ),
-        ),
+        body: getToppingsList(context),
       );
     }
   }
+  // Makes list of buttons for Toppings Page
+  Widget getToppingsList(BuildContext context) {
+  var listView = ListView(
+    children: <Widget> [
+      // Cucumber
+      ListTile(
+        title: Text("Cucumber"),
+        onTap: () {},
+      ),
+      // Green Pepper
+      ListTile(
+        title: Text("Green Pepper"),
+        onTap: () {},
+      ),
+      // Lettuce
+      ListTile(
+        title: Text("Lettuce"),
+        onTap: () {},
+      ),
+      // Onion
+      ListTile(
+        title: Text("Onion"),
+        onTap: () {},
+      ),
+      // Spinach
+      ListTile(
+        title: Text("Spinach"),
+        onTap: () {},
+      ),
+      // Tomato
+      ListTile(
+        title: Text("Tomato"),
+        onTap: () {},
+      ),
+    ],
+  );
+  return listView;
+}
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // SaucePage
@@ -316,35 +399,35 @@ class ItemTypePage extends StatelessWidget {
       centerTitle: true,
       backgroundColor: Colors.blueGrey[300],
     ),
-        body: Center(
-          child: RaisedButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: Text("You are on the sauce page. Press to go back."),
-          ),
-        ),
+        body: getSauceList(context,)
       );
     }
   }
-
-
-// Generic Code for a new page
-  // class ItemTypePage extends StatelessWidget {
-  //   @override 
-  //   Widget build(BuildContext context) {
-  //     return Scaffold(
-  //       appBar: AppBar(
-  //         title: Text("AllReady"),
-  //       ),
-  //       body: Center(
-  //         child: RaisedButton(
-  //           onPressed: () {
-  //             Navigator.pop(context);
-  //           },
-  //           child: Text("Go Back to Home Screen."),
-  //         ),
-  //       ),
-  //     );
-  //   }
-  // }
+  // Makes list of buttons for Sauce Page
+  Widget getSauceList(BuildContext context) {
+  var listView = ListView(
+    children: <Widget> [
+      // Chipotle Sauce
+      ListTile(
+        title: Text("Chipotle Sauce"),
+        onTap: () {},
+      ),
+      // Honey Mustard
+      ListTile(
+        title: Text("Honey Mustard"),
+        onTap: () {},
+      ),
+      // Mayonnaise
+      ListTile(
+        title: Text("Mayonnaise"),
+        onTap: () {},
+      ),
+      // Yellow Mustard
+      ListTile(
+        title: Text("Yellow Mustard"),
+        onTap: () {},
+      ),
+    ],
+  );
+  return listView;
+}
