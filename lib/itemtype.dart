@@ -5,6 +5,7 @@ import 'meatpage.dart';
 import 'cheesepage.dart';
 import 'toppingspage.dart';
 import 'saucepage.dart';
+import 'ordersummary.dart';
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ItemTypePage
@@ -83,7 +84,24 @@ Widget getItemTypeList(BuildContext context) {
           );
         },
       ),
+      SizedBox(height: 250),
+      Align(
+      alignment: Alignment.bottomCenter,
+      child: RaisedButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => OrderSumPage())
+          );
+        },
+        child: const Text('View Order Summary', style: TextStyle(fontSize: 20)),
+        color: Colors.blue,
+        textColor: Colors.white,
+        elevation: 5,
+        ),
+      ),
     ],
   );
   return listView;
 }
+
