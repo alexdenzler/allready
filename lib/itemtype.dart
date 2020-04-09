@@ -17,6 +17,7 @@ class ItemTypePage extends StatelessWidget {
   @override 
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blueGrey[350],
       appBar: AppBar(
         title: Text(
         'AllReady',
@@ -41,6 +42,7 @@ Widget getItemTypeList(BuildContext context) {
     children: <Widget> [
       // Bread Option
       ListTile(
+        trailing: Icon(Icons.arrow_right, color: Colors.red[600], size: 40),
         title: Text("Bread"),
         onTap: () {
           Navigator.push(
@@ -51,6 +53,7 @@ Widget getItemTypeList(BuildContext context) {
       ),
       // Meat Option
       ListTile(
+        trailing: Icon(Icons.arrow_right, color: Colors.red[600], size: 40),
         title: Text("Meat"),
         onTap: () {
           Navigator.push(
@@ -60,6 +63,7 @@ Widget getItemTypeList(BuildContext context) {
         },
       ),
       ListTile(
+        trailing: Icon(Icons.arrow_right, color: Colors.red[600], size: 40),
         title: Text("Cheese"),
         onTap: () {
           Navigator.push(
@@ -69,6 +73,7 @@ Widget getItemTypeList(BuildContext context) {
         },
       ),
       ListTile(
+        trailing: Icon(Icons.arrow_right, color: Colors.red[600], size: 40),
         title: Text("Toppings"),
         onTap: () {
           Navigator.push(
@@ -78,6 +83,7 @@ Widget getItemTypeList(BuildContext context) {
         },
       ),
       ListTile(
+        trailing: Icon(Icons.arrow_right, color: Colors.red[600], size: 40),
         title: Text("Sauce"),
         onTap: () {
           Navigator.push(

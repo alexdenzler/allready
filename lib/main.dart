@@ -17,6 +17,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blueGrey[350],
       appBar: AppBar(
         title: Text(
         'AllReady',
@@ -26,25 +27,38 @@ class HomePage extends StatelessWidget {
           letterSpacing: 2.0,
           color: Colors.red[600],
           fontFamily: 'ShadowsIntoLight',
-        ),
-      ),
-      centerTitle: true,
-      backgroundColor: Colors.blueGrey[300],
-    ),
-      // Creates a container with Atrium Picture that you can click on
-      body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
-        margin: EdgeInsets.all(10.0),
-        color: Colors.blueGrey[300],
-        child: RaisedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => ItemTypePage())
-              );
-          },
-          child: Image.network('https://themacweekly.com/wp-content/uploads/2018/01/Atrium_news_Rait18-1024x613.jpg'),
           ),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.blueGrey[300],
+      ),
+      // Creates a container with Atrium Picture that you can click on
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget> [
+            Image.network('https://themacweekly.com/wp-content/uploads/2018/01/Atrium_news_Rait18-1024x613.jpg'),
+            RaisedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                MaterialPageRoute(builder: (context) => ItemTypePage())
+                );
+              },
+              child: const Text(
+                'Click to Start Order',
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 2.0,
+                  color: Colors.white,
+                ),
+              ),
+              color: Colors.red[600],
+            )
+          ]
+        )
       ),
     );
   }
