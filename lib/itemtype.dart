@@ -98,12 +98,12 @@ Widget getItemTypeList(BuildContext context) {
             MaterialPageRoute(builder: (context) => OrderSumPage())
           );
         },
-        backgroundColor: Colors.blueGrey[350],
+        backgroundColor: Colors.red,
         label: Text(
           'View Order Summary', 
           style: TextStyle(
             fontSize: 20,
-            color: Colors.red[600],
+            color: Colors.white,
           )
         ),
       ),
