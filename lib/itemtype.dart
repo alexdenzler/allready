@@ -95,7 +95,7 @@ Widget getItemTypeList(BuildContext context) {
           );
         },
         child: const Text('View Order Summary', style: TextStyle(fontSize: 20)),
-        color: Colors.blue,
+        color: Colors.red[600],
         textColor: Colors.white,
         elevation: 5,
         ),
