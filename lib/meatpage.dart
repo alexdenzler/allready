@@ -33,26 +33,31 @@ import 'package:cloud_firestore/cloud_firestore.dart';
     children: <Widget> [
       // Bacon
       ListTile(
+        trailing: Icon(Icons.check_box_outline_blank),
         title: Text("Bacon"),
         onTap: () {},
       ),
       // Ham
       ListTile(
+        trailing: Icon(Icons.check_box_outline_blank),
         title: Text("Ham"),
         onTap: () {},
       ),
       // Roast Beef
       ListTile(
+        trailing: Icon(Icons.check_box_outline_blank),
         title: Text("Roast Beef"),
         onTap: () {},
       ),
       // Salami
       ListTile(
+        trailing: Icon(Icons.check_box_outline_blank),
         title: Text("Salami"),
         onTap: () {},
       ),
       // Turkey
       ListTile(
+        trailing: Icon(Icons.check_box_outline_blank),
         title: Text("Turkey"),
         onTap: () {},
       ),
