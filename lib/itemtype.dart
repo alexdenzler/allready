@@ -93,19 +93,20 @@ Widget getItemTypeList(BuildContext context) {
         },
       ),
       SizedBox(height: 250),
-      Align(
-      alignment: Alignment.bottomCenter,
-      child: RaisedButton(
+      FloatingActionButton.extended(
         onPressed: () {
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => OrderSumPage())
           );
         },
-        child: const Text('View Order Summary', style: TextStyle(fontSize: 20)),
-        color: Colors.red[600],
-        textColor: Colors.white,
-        elevation: 5,
+        backgroundColor: Colors.red,
+        label: Text(
+          'View Order Summary', 
+          style: TextStyle(
+            fontSize: 20,
+            color: Colors.white,
+          )
         ),
       ),
     ],
