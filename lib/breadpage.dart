@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // BreadPage
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  class BreadPage extends StatelessWidget {
+  class BreadPage extends StatelessWidget{
     const BreadPage({ Key key }) : super(key: key);
     @override 
     Widget build(BuildContext context) {
@@ -29,6 +29,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
   }
   // Makes list of buttons for BreadPage
   Widget getBreadList(BuildContext context) {
+  
   var listView = ListView(
     children: <Widget> [
       // White Bread
