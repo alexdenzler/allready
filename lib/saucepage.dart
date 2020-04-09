@@ -34,21 +34,25 @@ import 'package:cloud_firestore/cloud_firestore.dart';
     children: <Widget> [
       // Chipotle Sauce
       ListTile(
+        trailing: Icon(Icons.check_box_outline_blank),
         title: Text("Chipotle Sauce"),
         onTap: () {},
       ),
       // Honey Mustard
       ListTile(
+        trailing: Icon(Icons.check_box_outline_blank),
         title: Text("Honey Mustard"),
         onTap: () {},
       ),
       // Mayonnaise
       ListTile(
+        trailing: Icon(Icons.check_box_outline_blank),
         title: Text("Mayonnaise"),
         onTap: () {},
       ),
       // Yellow Mustard
       ListTile(
+        trailing: Icon(Icons.check_box_outline_blank),
         title: Text("Yellow Mustard"),
         onTap: () {},
       ),

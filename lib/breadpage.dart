@@ -34,31 +34,37 @@ import 'package:cloud_firestore/cloud_firestore.dart';
     children: <Widget> [
       // White Bread
       ListTile(
+        trailing: Icon(Icons.check_box_outline_blank),
         title: Text("White Bread"),
         onTap: () {},
       ),
       // Wheat Bread
       ListTile(
+        trailing: Icon(Icons.check_box_outline_blank),        
         title: Text("Wheat Bread"),
         onTap: () {},
       ),
       // Multigrain Bread
       ListTile(
+        trailing: Icon(Icons.check_box_outline_blank),
         title: Text("Multigrain Bread"),
         onTap: () {},
       ),
       // White Wrap
       ListTile(
+        trailing: Icon(Icons.check_box_outline_blank),
         title: Text("White Wrap"),
         onTap: () {},
       ),
       // Whole Wheat Wrap
       ListTile(
+        trailing: Icon(Icons.check_box_outline_blank),
         title: Text("Whole Wheat Wrap"),
         onTap: () {},
       ),
       // Spinach Wrap
       ListTile(
+        trailing: Icon(Icons.check_box_outline_blank),
         title: Text("Spinach Wrap"),
         onTap: () {},
       ),
