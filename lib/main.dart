@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'itemtype.dart';
@@ -13,8 +14,16 @@ void main() => runApp(MaterialApp(
 // HomePage
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class HomePage extends StatelessWidget {
+  
   @override
   Widget build(BuildContext context) {
+    final databaseRef = Firestore.instance;
+    void startOrder() async{
+      print("test!!!!");
+      await databaseRef.collection("orderlists").getDocuments().then((QuerySnapshot snapshot) {
+    snapshot.documents.forEach((f) => print('${f.data}}'));});
+      print("test2");
+    }
     return Scaffold(
       backgroundColor: Colors.grey[500],
       appBar: AppBar(
@@ -39,7 +48,8 @@ class HomePage extends StatelessWidget {
           children: <Widget> [
             Image.network('https://themacweekly.com/wp-content/uploads/2018/01/Atrium_news_Rait18-1024x613.jpg'),
             RaisedButton(
-              onPressed: () {
+              onPressed:() { 
+              startOrder();
                 Navigator.push(
                   context,
                 MaterialPageRoute(builder: (context) => ItemTypePage())
