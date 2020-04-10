@@ -4,8 +4,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // MeatPage
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  class MeatPage extends StatelessWidget {
+  class MeatPage extends StatefulWidget{
     const MeatPage({ Key key }) : super(key: key);
+    
+    @override
+    _MeatPageState createState() => _MeatPageState();
+  }
+
+  class _MeatPageState extends State<MeatPage> {
     @override 
     Widget build(BuildContext context) {
       return Scaffold(

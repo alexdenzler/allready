@@ -4,8 +4,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // CheesePage
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  class CheesePage extends StatelessWidget {
-    const CheesePage({ Key key }) : super(key: key); 
+  class CheesePage extends StatefulWidget{
+    const CheesePage({ Key key }) : super(key: key);
+    
+    @override
+    _CheesePageState createState() => _CheesePageState();
+  }
+  
+  class _CheesePageState extends State<CheesePage> {
     @override 
     Widget build(BuildContext context) {
       return Scaffold(

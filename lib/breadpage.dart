@@ -4,8 +4,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // BreadPage
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  class BreadPage extends StatelessWidget{
+  class BreadPage extends StatefulWidget{
     const BreadPage({ Key key }) : super(key: key);
+    
+    @override
+    _BreadPageState createState() => _BreadPageState();
+  }
+  
+  class _BreadPageState extends State<BreadPage>{
     @override 
     Widget build(BuildContext context) {
       return Scaffold(

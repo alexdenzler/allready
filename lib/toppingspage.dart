@@ -4,8 +4,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ToppingsPage
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  class ToppingsPage extends StatelessWidget {
+  class ToppingsPage extends StatefulWidget{
     const ToppingsPage({ Key key }) : super(key: key);
+    
+    @override
+    _ToppingsPageState createState() => _ToppingsPageState();
+  }
+
+  class _ToppingsPageState extends State<ToppingsPage> {
     @override 
     Widget build(BuildContext context) {
       return Scaffold(
