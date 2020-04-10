@@ -15,7 +15,7 @@ class ItemTypePage extends StatelessWidget {
   @override 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey[350],
+      backgroundColor: Colors.grey[500],
       appBar: AppBar(
         title: Text(
         'AllReady',
@@ -41,7 +41,12 @@ Widget getItemTypeList(BuildContext context) {
       // Bread Option
       ListTile(
         trailing: Icon(Icons.arrow_right, color: Colors.red[600], size: 40),
-        title: Text("Bread"),
+        title: Text(
+          "Bread", 
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         onTap: () {
           Navigator.push(
             context,
@@ -52,7 +57,12 @@ Widget getItemTypeList(BuildContext context) {
       // Meat Option
       ListTile(
         trailing: Icon(Icons.arrow_right, color: Colors.red[600], size: 40),
-        title: Text("Meat"),
+        title: Text(
+          "Meat",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         onTap: () {
           Navigator.push(
             context,
@@ -62,7 +72,12 @@ Widget getItemTypeList(BuildContext context) {
       ),
       ListTile(
         trailing: Icon(Icons.arrow_right, color: Colors.red[600], size: 40),
-        title: Text("Cheese"),
+        title: Text(
+          "Cheese",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         onTap: () {
           Navigator.push(
             context,
@@ -72,7 +87,12 @@ Widget getItemTypeList(BuildContext context) {
       ),
       ListTile(
         trailing: Icon(Icons.arrow_right, color: Colors.red[600], size: 40),
-        title: Text("Toppings"),
+        title: Text(
+          "Toppings",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         onTap: () {
           Navigator.push(
             context,
@@ -82,7 +102,12 @@ Widget getItemTypeList(BuildContext context) {
       ),
       ListTile(
         trailing: Icon(Icons.arrow_right, color: Colors.red[600], size: 40),
-        title: Text("Sauce"),
+        title: Text(
+          "Sauce",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),  
+        ),
         onTap: () {
           Navigator.push(
             context,

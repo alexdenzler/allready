@@ -9,6 +9,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
     @override 
     Widget build(BuildContext context) {
       return Scaffold(
+        backgroundColor: Colors.grey[500],
         appBar: AppBar(
         title: Text(
           'AllReady',
@@ -34,31 +35,56 @@ import 'package:cloud_firestore/cloud_firestore.dart';
       // Bacon
       ListTile(
         trailing: Icon(Icons.check_box_outline_blank),
-        title: Text("Bacon"),
+        title: Text(
+          "Bacon",
+        style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),  
+        ),
         onTap: () {},
       ),
       // Ham
       ListTile(
         trailing: Icon(Icons.check_box_outline_blank),
-        title: Text("Ham"),
+        title: Text(
+          "Ham",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),  
+        ),
         onTap: () {},
       ),
       // Roast Beef
       ListTile(
         trailing: Icon(Icons.check_box_outline_blank),
-        title: Text("Roast Beef"),
+        title: Text(
+          "Roast Beef",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),  
+        ),
         onTap: () {},
       ),
       // Salami
       ListTile(
         trailing: Icon(Icons.check_box_outline_blank),
-        title: Text("Salami"),
+        title: Text(
+          "Salami",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),  
+        ),
         onTap: () {},
       ),
       // Turkey
       ListTile(
         trailing: Icon(Icons.check_box_outline_blank),
-        title: Text("Turkey"),
+        title: Text(
+          "Turkey",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),  
+        ),
         onTap: () {},
       ),
     ],

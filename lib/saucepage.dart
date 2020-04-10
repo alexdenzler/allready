@@ -10,6 +10,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
     @override 
     Widget build(BuildContext context) {
       return Scaffold(
+        backgroundColor: Colors.grey[500],
         appBar: AppBar(
         title: Text(
         'AllReady',
@@ -35,25 +36,45 @@ import 'package:cloud_firestore/cloud_firestore.dart';
       // Chipotle Sauce
       ListTile(
         trailing: Icon(Icons.check_box_outline_blank),
-        title: Text("Chipotle Sauce"),
+        title: Text(
+          "Chipotle Sauce",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),  
+        ),
         onTap: () {},
       ),
       // Honey Mustard
       ListTile(
         trailing: Icon(Icons.check_box_outline_blank),
-        title: Text("Honey Mustard"),
+        title: Text(
+          "Honey Mustard",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),  
+        ),
         onTap: () {},
       ),
       // Mayonnaise
       ListTile(
         trailing: Icon(Icons.check_box_outline_blank),
-        title: Text("Mayonnaise"),
+        title: Text(
+          "Mayonnaise",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),  
+        ),
         onTap: () {},
       ),
       // Yellow Mustard
       ListTile(
         trailing: Icon(Icons.check_box_outline_blank),
-        title: Text("Yellow Mustard"),
+        title: Text(
+          "Yellow Mustard",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),  
+        ),
         onTap: () {},
       ),
     ],

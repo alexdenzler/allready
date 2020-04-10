@@ -9,6 +9,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
     @override 
     Widget build(BuildContext context) {
       return Scaffold(
+        backgroundColor: Colors.grey[500],
         appBar: AppBar(
         title: Text(
         'AllReady',
@@ -34,37 +35,67 @@ import 'package:cloud_firestore/cloud_firestore.dart';
       // Cucumber
       ListTile(
         trailing: Icon(Icons.check_box_outline_blank),
-        title: Text("Cucumber"),
+        title: Text(
+          "Cucumber",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),  
+        ),
         onTap: () {},
       ),
       // Green Pepper
       ListTile(
         trailing: Icon(Icons.check_box_outline_blank),
-        title: Text("Green Pepper"),
+        title: Text(
+          "Green Pepper",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         onTap: () {},
       ),
       // Lettuce
       ListTile(
         trailing: Icon(Icons.check_box_outline_blank),
-        title: Text("Lettuce"),
+        title: Text(
+          "Lettuce",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),  
+        ),
         onTap: () {},
       ),
       // Onion
       ListTile(
         trailing: Icon(Icons.check_box_outline_blank),
-        title: Text("Onion"),
+        title: Text(
+          "Onion",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),  
+        ),
         onTap: () {},
       ),
       // Spinach
       ListTile(
         trailing: Icon(Icons.check_box_outline_blank),
-        title: Text("Spinach"),
+        title: Text(
+          "Spinach",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),  
+        ),
         onTap: () {},
       ),
       // Tomato
       ListTile(
         trailing: Icon(Icons.check_box_outline_blank),
-        title: Text("Tomato"),
+        title: Text(
+          "Tomato",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         onTap: () {},
       ),
     ],

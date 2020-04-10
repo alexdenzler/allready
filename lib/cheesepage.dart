@@ -9,6 +9,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
     @override 
     Widget build(BuildContext context) {
       return Scaffold(
+        backgroundColor: Colors.grey[500],
         appBar: AppBar(
         title: Text(
         'AllReady',
@@ -34,31 +35,56 @@ import 'package:cloud_firestore/cloud_firestore.dart';
       // American
       ListTile(
         trailing: Icon(Icons.check_box_outline_blank),
-        title: Text("American"),
+        title: Text(
+          "American",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),  
+        ),
         onTap: () {},
       ),
       // Cheddar
       ListTile(
         trailing: Icon(Icons.check_box_outline_blank),
-        title: Text("Cheddar"),
+        title: Text(
+          "Cheddar",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),  
+        ),
         onTap: () {},
       ),
       // Pepperjack
       ListTile(
         trailing: Icon(Icons.check_box_outline_blank),
-        title: Text("Pepperjack"),
+        title: Text(
+          "Pepperjack",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),  
+        ),
         onTap: () {},
       ),
       // Provolone
       ListTile(
         trailing: Icon(Icons.check_box_outline_blank),
-        title: Text("Provolone"),
+        title: Text(
+          "Provolone",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),  
+        ),
         onTap: () {},
       ),
       // Swiss
       ListTile(
         trailing: Icon(Icons.check_box_outline_blank),
-        title: Text("Swiss"),
+        title: Text(
+          "Swiss",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),  
+        ),
         onTap: () {},
       ),
     ],
