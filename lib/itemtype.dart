@@ -35,7 +35,7 @@ class ItemTypePage extends StatelessWidget {
       body: getItemTypeList(context),
     );
   }
-}
+} 
 // Makes list of buttons for ItemTypePage
 Widget getItemTypeList(BuildContext context) {
   var listView = ListView(
