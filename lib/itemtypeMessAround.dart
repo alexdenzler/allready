@@ -36,7 +36,9 @@ class ItemTypePage extends StatelessWidget {
 } 
 // Makes list of buttons for ItemTypePage
 Widget getItemTypeList(BuildContext context) {
+  // To do: Replace this list with list retrieved from Firebase
   final List<String> itemTypes = <String>['Bread', 'Meat', 'Cheese', 'Toppings', 'Sauce'];
+  // To do: Retrieve various collections/documents from Firebase instead of set list
   final List<dynamic> pages = <dynamic>[BreadPage(), MeatPage(), CheesePage(), ToppingsPage(), SaucePage()];
   
   var listView = ListView.builder(
@@ -194,7 +196,7 @@ Widget getItemTypeList(BuildContext context) {
     //     ),
     //   ),
     // ],
-  );
-  return listView;
+  //);
+  //return listView;
 }
 
