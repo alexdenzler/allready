@@ -16,7 +16,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
     
     @override 
     Widget build(BuildContext context) {
-      final List<String> breads = <String>["White","Wheat"];
+      final List<String> breads = <String>["White Bread","Wheat"];
       return Scaffold(
       backgroundColor: Colors.grey[500],
         appBar: AppBar(
