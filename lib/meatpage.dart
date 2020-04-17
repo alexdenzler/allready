@@ -37,6 +37,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
   // Makes list of buttons for MeatPage
   Widget getMeatList(BuildContext context) {
     final List<String> meats = <String>["meat 1","meat 2"];
+    
     var listView = ListView.builder(
       itemCount: meats.length,
       itemBuilder: (BuildContext context, int index){
@@ -52,66 +53,5 @@ import 'package:cloud_firestore/cloud_firestore.dart';
         );
       }
    );
-
-    return listView;
-  // var listView = ListView(
-  //   children: <Widget> [
-  //     // Bacon
-  //     ListTile(
-  //       trailing: Icon(Icons.check_box_outline_blank),
-  //       title: Text(
-  //         "Bacon",
-  //       style: TextStyle(
-  //           fontWeight: FontWeight.bold,
-  //         ),  
-  //       ),
-  //       onTap: () {},
-  //     ),
-  //     // Ham
-  //     ListTile(
-  //       trailing: Icon(Icons.check_box_outline_blank),
-  //       title: Text(
-  //         "Ham",
-  //         style: TextStyle(
-  //           fontWeight: FontWeight.bold,
-  //         ),  
-  //       ),
-  //       onTap: () {},
-  //     ),
-  //     // Roast Beef
-  //     ListTile(
-  //       trailing: Icon(Icons.check_box_outline_blank),
-  //       title: Text(
-  //         "Roast Beef",
-  //         style: TextStyle(
-  //           fontWeight: FontWeight.bold,
-  //         ),  
-  //       ),
-  //       onTap: () {},
-  //     ),
-  //     // Salami
-  //     ListTile(
-  //       trailing: Icon(Icons.check_box_outline_blank),
-  //       title: Text(
-  //         "Salami",
-  //         style: TextStyle(
-  //           fontWeight: FontWeight.bold,
-  //         ),  
-  //       ),
-  //       onTap: () {},
-  //     ),
-  //     // Turkey
-  //     ListTile(
-  //       trailing: Icon(Icons.check_box_outline_blank),
-  //       title: Text(
-  //         "Turkey",
-  //         style: TextStyle(
-  //           fontWeight: FontWeight.bold,
-  //         ),  
-  //       ),
-  //       onTap: () {},
-  //     ),
-  //   ],
-  // );
-  // return listView;
+  return listView;
 }

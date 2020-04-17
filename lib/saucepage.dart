@@ -54,55 +54,5 @@ import 'package:cloud_firestore/cloud_firestore.dart';
         );
       }
    );
-
-    return listView;
-  // var listView = ListView(
-  //   children: <Widget> [
-  //     // Chipotle Sauce
-  //     ListTile(
-  //       trailing: Icon(Icons.check_box_outline_blank),
-  //       title: Text(
-  //         "Chipotle Sauce",
-  //         style: TextStyle(
-  //           fontWeight: FontWeight.bold,
-  //         ),  
-  //       ),
-  //       onTap: () {},
-  //     ),
-  //     // Honey Mustard
-  //     ListTile(
-  //       trailing: Icon(Icons.check_box_outline_blank),
-  //       title: Text(
-  //         "Honey Mustard",
-  //         style: TextStyle(
-  //           fontWeight: FontWeight.bold,
-  //         ),  
-  //       ),
-  //       onTap: () {},
-  //     ),
-  //     // Mayonnaise
-  //     ListTile(
-  //       trailing: Icon(Icons.check_box_outline_blank),
-  //       title: Text(
-  //         "Mayonnaise",
-  //         style: TextStyle(
-  //           fontWeight: FontWeight.bold,
-  //         ),  
-  //       ),
-  //       onTap: () {},
-  //     ),
-  //     // Yellow Mustard
-  //     ListTile(
-  //       trailing: Icon(Icons.check_box_outline_blank),
-  //       title: Text(
-  //         "Yellow Mustard",
-  //         style: TextStyle(
-  //           fontWeight: FontWeight.bold,
-  //         ),  
-  //       ),
-  //       onTap: () {},
-  //     ),
-  //   ],
-  // );
-  // return listView;
+  return listView;
 }
