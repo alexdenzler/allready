@@ -13,8 +13,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
   }
 
   class _SaucePageState extends State<SaucePage> {
+    List<bool> checked = <bool>[false,false];
     @override 
     Widget build(BuildContext context) {
+      final List<String> sauces = <String>["Mayo","Chipotle"];
       return Scaffold(
         backgroundColor: Colors.grey[500],
         appBar: AppBar(
@@ -31,28 +33,47 @@ import 'package:cloud_firestore/cloud_firestore.dart';
       centerTitle: true,
       backgroundColor: Colors.blueGrey[300],
     ),
-        body: getSauceList(context,)
+        body: ListView.builder(
+              itemCount: sauces.length,
+              itemBuilder: (BuildContext context, int index){
+                return Container(
+                  child: CheckboxListTile(
+                    title: Text(sauces[index],
+                    style: TextStyle(
+                    fontWeight: FontWeight.bold
+                    )),
+                    value: checked[index],
+                    onChanged: (val) {
+                      setState(() {
+                        checked[index] = val;
+                      });
+                    },
+                  ),
+                );
+              }
+            ),
+//        getSauceList(context,)
       );
     }
   }
   // Makes list of buttons for Sauce Page
-  Widget getSauceList(BuildContext context) {
-    final List<String> sauces = <String>["sauce 1","sauce 2"];
+//   Widget getSauceList(BuildContext context) {
+//     final List<String> sauces = <String>["sauce 1","sauce 2"];
 
-    var listView = ListView.builder(
-      itemCount: sauces.length,
-      itemBuilder: (BuildContext context, int index){
-        return new Container(
-          child: ListTile(
-            trailing: Icon(Icons.check_box_outline_blank),
-            title: Text(sauces[index],
-              style: TextStyle(
-                fontWeight: FontWeight.bold
-              )
-            ),
-          )
-        );
-      }
-   );
-  return listView;
-}
+//     var listView = ListView.builder(
+//       itemCount: sauces.length,
+//       itemBuilder: (BuildContext context, int index){
+//         return new Container(
+//           child: ListTile(
+//             trailing: Icon(Icons.check_box_outline_blank),
+//             title: Text(sauces[index],
+//               style: TextStyle(
+//                 fontWeight: FontWeight.bold
+//               )
+//             ),
+//           )
+//         );
+//       }
+//    );
+//   return listView;
+// }
