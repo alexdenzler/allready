@@ -36,64 +36,83 @@ import 'package:cloud_firestore/cloud_firestore.dart';
   }
   // Makes list of buttons for Cheese Page
   Widget getCheeseList(BuildContext context) {
-  var listView = ListView(
-    children: <Widget> [
-      // American
-      ListTile(
-        trailing: Icon(Icons.check_box_outline_blank),
-        title: Text(
-          "American",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),  
-        ),
-        onTap: () {},
-      ),
-      // Cheddar
-      ListTile(
-        trailing: Icon(Icons.check_box_outline_blank),
-        title: Text(
-          "Cheddar",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),  
-        ),
-        onTap: () {},
-      ),
-      // Pepperjack
-      ListTile(
-        trailing: Icon(Icons.check_box_outline_blank),
-        title: Text(
-          "Pepperjack",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),  
-        ),
-        onTap: () {},
-      ),
-      // Provolone
-      ListTile(
-        trailing: Icon(Icons.check_box_outline_blank),
-        title: Text(
-          "Provolone",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),  
-        ),
-        onTap: () {},
-      ),
-      // Swiss
-      ListTile(
-        trailing: Icon(Icons.check_box_outline_blank),
-        title: Text(
-          "Swiss",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),  
-        ),
-        onTap: () {},
-      ),
-    ],
-  );
-  return listView;
+    final List<String> cheeses = <String>["cheese 1","cheese 2"];
+
+    var listView = ListView.builder(
+      itemCount: cheeses.length,
+      itemBuilder: (BuildContext context, int index){
+        return new Container(
+          child: ListTile(
+            trailing: Icon(Icons.check_box_outline_blank),
+            title: Text(cheeses[index],
+              style: TextStyle(
+                fontWeight: FontWeight.bold
+              )
+            ),
+          )
+        );
+      }
+   );
+
+    return listView;
+  // var listView = ListView(
+  //   children: <Widget> [
+  //     // American
+  //     ListTile(
+  //       trailing: Icon(Icons.check_box_outline_blank),
+  //       title: Text(
+  //         "American",
+  //         style: TextStyle(
+  //           fontWeight: FontWeight.bold,
+  //         ),  
+  //       ),
+  //       onTap: () {},
+  //     ),
+  //     // Cheddar
+  //     ListTile(
+  //       trailing: Icon(Icons.check_box_outline_blank),
+  //       title: Text(
+  //         "Cheddar",
+  //         style: TextStyle(
+  //           fontWeight: FontWeight.bold,
+  //         ),  
+  //       ),
+  //       onTap: () {},
+  //     ),
+  //     // Pepperjack
+  //     ListTile(
+  //       trailing: Icon(Icons.check_box_outline_blank),
+  //       title: Text(
+  //         "Pepperjack",
+  //         style: TextStyle(
+  //           fontWeight: FontWeight.bold,
+  //         ),  
+  //       ),
+  //       onTap: () {},
+  //     ),
+  //     // Provolone
+  //     ListTile(
+  //       trailing: Icon(Icons.check_box_outline_blank),
+  //       title: Text(
+  //         "Provolone",
+  //         style: TextStyle(
+  //           fontWeight: FontWeight.bold,
+  //         ),  
+  //       ),
+  //       onTap: () {},
+  //     ),
+  //     // Swiss
+  //     ListTile(
+  //       trailing: Icon(Icons.check_box_outline_blank),
+  //       title: Text(
+  //         "Swiss",
+  //         style: TextStyle(
+  //           fontWeight: FontWeight.bold,
+  //         ),  
+  //       ),
+  //       onTap: () {},
+  //     ),
+  //   ],
+  // );
+  // return listView;
 }
