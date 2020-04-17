@@ -35,76 +35,98 @@ import 'package:cloud_firestore/cloud_firestore.dart';
     }
   }
   // Makes list of buttons for Toppings Page
-  Widget getToppingsList(BuildContext context) {
-  var listView = ListView(
-    children: <Widget> [
-      // Cucumber
-      ListTile(
-        trailing: Icon(Icons.check_box_outline_blank),
-        title: Text(
-          "Cucumber",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),  
-        ),
-        onTap: () {},
-      ),
-      // Green Pepper
-      ListTile(
-        trailing: Icon(Icons.check_box_outline_blank),
-        title: Text(
-          "Green Pepper",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        onTap: () {},
-      ),
-      // Lettuce
-      ListTile(
-        trailing: Icon(Icons.check_box_outline_blank),
-        title: Text(
-          "Lettuce",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),  
-        ),
-        onTap: () {},
-      ),
-      // Onion
-      ListTile(
-        trailing: Icon(Icons.check_box_outline_blank),
-        title: Text(
-          "Onion",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),  
-        ),
-        onTap: () {},
-      ),
-      // Spinach
-      ListTile(
-        trailing: Icon(Icons.check_box_outline_blank),
-        title: Text(
-          "Spinach",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),  
-        ),
-        onTap: () {},
-      ),
-      // Tomato
-      ListTile(
-        trailing: Icon(Icons.check_box_outline_blank),
-        title: Text(
-          "Tomato",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        onTap: () {},
-      ),
-    ],
-  );
-  return listView;
-}
+  Widget getToppingsList(BuildContext context){
+    final List<String> toppings = <String>["topping 1","topping 2"];
+
+    var listView = ListView.builder(
+      itemCount: toppings.length,
+      itemBuilder: (BuildContext context, int index){
+        return new Container(
+          child: ListTile(
+            trailing: Icon(Icons.check_box_outline_blank),
+            title: Text(toppings[index],
+              style: TextStyle(
+                fontWeight: FontWeight.bold
+              )
+            ),
+          )
+        );
+      }
+   );
+
+    return listView;
+  }
+//  Widget getToppingsList(BuildContext context) {
+    
+//   var listView = ListView(
+//     children: <Widget> [
+//       // Cucumber
+//       ListTile(
+//         trailing: Icon(Icons.check_box_outline_blank),
+//         title: Text(
+//           "Cucumber",
+//           style: TextStyle(
+//             fontWeight: FontWeight.bold,
+//           ),  
+//         ),
+//         onTap: () {},
+//       ),
+//       // Green Pepper
+//       ListTile(
+//         trailing: Icon(Icons.check_box_outline_blank),
+//         title: Text(
+//           "Green Pepper",
+//           style: TextStyle(
+//             fontWeight: FontWeight.bold,
+//           ),
+//         ),
+//         onTap: () {},
+//       ),
+//       // Lettuce
+//       ListTile(
+//         trailing: Icon(Icons.check_box_outline_blank),
+//         title: Text(
+//           "Lettuce",
+//           style: TextStyle(
+//             fontWeight: FontWeight.bold,
+//           ),  
+//         ),
+//         onTap: () {},
+//       ),
+//       // Onion
+//       ListTile(
+//         trailing: Icon(Icons.check_box_outline_blank),
+//         title: Text(
+//           "Onion",
+//           style: TextStyle(
+//             fontWeight: FontWeight.bold,
+//           ),  
+//         ),
+//         onTap: () {},
+//       ),
+//       // Spinach
+//       ListTile(
+//         trailing: Icon(Icons.check_box_outline_blank),
+//         title: Text(
+//           "Spinach",
+//           style: TextStyle(
+//             fontWeight: FontWeight.bold,
+//           ),  
+//         ),
+//         onTap: () {},
+//       ),
+//       // Tomato
+//       ListTile(
+//         trailing: Icon(Icons.check_box_outline_blank),
+//         title: Text(
+//           "Tomato",
+//           style: TextStyle(
+//             fontWeight: FontWeight.bold,
+//           ),
+//         ),
+//         onTap: () {},
+//       ),
+//     ],
+//   );
+//   return listView;
+// }

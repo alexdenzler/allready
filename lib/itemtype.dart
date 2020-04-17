@@ -39,141 +39,168 @@ class ItemTypePage extends StatelessWidget {
 // Makes list of buttons for ItemTypePage
 Widget getItemTypeList(BuildContext context) {
   final List<String> itemTypes = <String>['Bread', 'Meat', 'Cheese', 'Toppings', 'Sauce'];
+  final List<dynamic> pages = <dynamic>[BreadPage(), MeatPage(), CheesePage(), ToppingsPage(), SaucePage()];
   
-  //final List<const> pages = <int>[600, 500, 100];
-  
-    var listView = CustomScrollView(
-      shrinkWrap: true,
-      slivers: <Widget>[
-        SliverPadding(
-          padding: const EdgeInsets.all(20),
-          sliver: SliverList(
-            delegate: SliverChildListDelegate(
-              <Widget> [
-                ListView.builder(
-                  padding: const EdgeInsets.all(20),
-                  itemCount: itemTypes.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      color: Colors.blueGrey[300],
-                      child: ListTile(
-                        trailing: Icon(Icons.arrow_right, color: Colors.red[600], size: 40),
-                        title: Text(
-                          '${itemTypes[index]}',
-                          style: TextStyle(fontWeight: FontWeight.bold)
-                        ),
-                      // onTap: () {
-                      //   Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(builder: (context) => pageFromListOfPages)
-                      //   );
-                      // },
-                      ),
-                    );
-                  }
-                ),
-              ],
+  var listView = ListView.builder(
+      itemCount: itemTypes.length,
+      itemBuilder: (BuildContext context, int index){
+        return new Container(
+          child: ListTile(
+            trailing: Icon(Icons.arrow_right, color: Colors.red[600], size: 40),
+            title: Text(itemTypes[index],
+              style: TextStyle(
+                fontWeight: FontWeight.bold
+              )
             ),
-          ),
-        ),
-      ],
-    // children: <Widget> [
-    //   // Bread Option
-    //   ListTile(
-    //     trailing: Icon(Icons.arrow_right, color: Colors.red[600], size: 40),
-    //     title: Text(
-    //       "Bread", 
-    //       style: TextStyle(
-    //         fontWeight: FontWeight.bold,
-    //       ),
-    //     ),
-    //     onTap: () {
-    //       Navigator.push(
-    //         context,
-    //         MaterialPageRoute(builder: (context) => BreadPage())
-    //       );
-    //     },
-    //   ),
-    //   // Meat Option
-    //   ListTile(
-    //     trailing: Icon(Icons.arrow_right, color: Colors.red[600], size: 40),
-    //     title: Text(
-    //       "Meat",
-    //       style: TextStyle(
-    //         fontWeight: FontWeight.bold,
-    //       ),
-    //     ),
-    //     onTap: () {
-    //       Navigator.push(
-    //         context,
-    //         MaterialPageRoute(builder: (context) => MeatPage())
-    //       );
-    //     },
-    //   ),
-    //   ListTile(
-    //     trailing: Icon(Icons.arrow_right, color: Colors.red[600], size: 40),
-    //     title: Text(
-    //       "Cheese",
-    //       style: TextStyle(
-    //         fontWeight: FontWeight.bold,
-    //       ),
-    //     ),
-    //     onTap: () {
-    //       Navigator.push(
-    //         context,
-    //         MaterialPageRoute(builder: (context) => CheesePage())
-    //       );
-    //     },
-    //   ),
-    //   ListTile(
-    //     trailing: Icon(Icons.arrow_right, color: Colors.red[600], size: 40),
-    //     title: Text(
-    //       "Toppings",
-    //       style: TextStyle(
-    //         fontWeight: FontWeight.bold,
-    //       ),
-    //     ),
-    //     onTap: () {
-    //       Navigator.push(
-    //         context,
-    //         MaterialPageRoute(builder: (context) => ToppingsPage())
-    //       );
-    //     },
-    //   ),
-    //   ListTile(
-    //     trailing: Icon(Icons.arrow_right, color: Colors.red[600], size: 40),
-    //     title: Text(
-    //       "Sauce",
-    //       style: TextStyle(
-    //         fontWeight: FontWeight.bold,
-    //       ),  
-    //     ),
-    //     onTap: () {
-    //       Navigator.push(
-    //         context,
-    //         MaterialPageRoute(builder: (context) => SaucePage())
-    //       );
-    //     },
-    //   ),
-    //   SizedBox(height: 250),
-    //   FloatingActionButton.extended(
-    //     onPressed: () {
-    //       Navigator.push(
-    //         context,
-    //         MaterialPageRoute(builder: (context) => OrderSumPage())
-    //       );
-    //     },
-    //     backgroundColor: Colors.red,
-    //     label: Text(
-    //       'View Order Summary', 
-    //       style: TextStyle(
-    //         fontSize: 20,
-    //         color: Colors.white,
-    //       )
-    //     ),
-    //   ),
-    // ],
-  );
-  return listView;
+          onTap: () {
+            Navigator.push(
+              context, 
+              MaterialPageRoute(builder: (context) => pages[index])
+            );
+          },
+          )
+        );
+      }
+   );
+
+    return listView;
+  // final List<String> itemTypes = <String>['Bread', 'Meat', 'Cheese', 'Toppings', 'Sauce'];
+  
+  // //final List<const> pages = <int>[600, 500, 100];
+  
+  //   var listView = CustomScrollView(
+  //     shrinkWrap: true,
+  //     slivers: <Widget>[
+  //       SliverPadding(
+  //         padding: const EdgeInsets.all(20),
+  //         sliver: SliverList(
+  //           delegate: SliverChildListDelegate(
+  //             <Widget> [
+  //               ListView.builder(
+  //                 padding: const EdgeInsets.all(20),
+  //                 itemCount: itemTypes.length,
+  //                 itemBuilder: (BuildContext context, int index) {
+  //                   return Container(
+  //                     color: Colors.blueGrey[300],
+  //                     child: ListTile(
+  //                       trailing: Icon(Icons.arrow_right, color: Colors.red[600], size: 40),
+  //                       title: Text(
+  //                         '${itemTypes[index]}',
+  //                         style: TextStyle(fontWeight: FontWeight.bold)
+  //                       ),
+  //                     // onTap: () {
+  //                     //   Navigator.push(
+  //                     //     context,
+  //                     //     MaterialPageRoute(builder: (context) => pageFromListOfPages)
+  //                     //   );
+  //                     // },
+  //                     ),
+  //                   );
+  //                 }
+  //               ),
+  //             ],
+  //           ),
+  //         ),
+  //       ),
+  //     ],
+  //   var listView = ListView(
+  //   children: <Widget> [
+  //     // Bread Option
+  //     ListTile(
+  //       trailing: Icon(Icons.arrow_right, color: Colors.red[600], size: 40),
+  //       title: Text(
+  //         "Bread", 
+  //         style: TextStyle(
+  //           fontWeight: FontWeight.bold,
+  //         ),
+  //       ),
+  //       onTap: () {
+  //         Navigator.push(
+  //           context,
+  //           MaterialPageRoute(builder: (context) => BreadPage())
+  //         );
+  //       },
+  //     ),
+  //     // Meat Option
+  //     ListTile(
+  //       trailing: Icon(Icons.arrow_right, color: Colors.red[600], size: 40),
+  //       title: Text(
+  //         "Meat",
+  //         style: TextStyle(
+  //           fontWeight: FontWeight.bold,
+  //         ),
+  //       ),
+  //       onTap: () {
+  //         Navigator.push(
+  //           context,
+  //           MaterialPageRoute(builder: (context) => MeatPage())
+  //         );
+  //       },
+  //     ),
+  //     ListTile(
+  //       trailing: Icon(Icons.arrow_right, color: Colors.red[600], size: 40),
+  //       title: Text(
+  //         "Cheese",
+  //         style: TextStyle(
+  //           fontWeight: FontWeight.bold,
+  //         ),
+  //       ),
+  //       onTap: () {
+  //         Navigator.push(
+  //           context,
+  //           MaterialPageRoute(builder: (context) => CheesePage())
+  //         );
+  //       },
+  //     ),
+  //     ListTile(
+  //       trailing: Icon(Icons.arrow_right, color: Colors.red[600], size: 40),
+  //       title: Text(
+  //         "Toppings",
+  //         style: TextStyle(
+  //           fontWeight: FontWeight.bold,
+  //         ),
+  //       ),
+  //       onTap: () {
+  //         Navigator.push(
+  //           context,
+  //           MaterialPageRoute(builder: (context) => ToppingsPage())
+  //         );
+  //       },
+  //     ),
+  //     ListTile(
+  //       trailing: Icon(Icons.arrow_right, color: Colors.red[600], size: 40),
+  //       title: Text(
+  //         "Sauce",
+  //         style: TextStyle(
+  //           fontWeight: FontWeight.bold,
+  //         ),  
+  //       ),
+  //       onTap: () {
+  //         Navigator.push(
+  //           context,
+  //           MaterialPageRoute(builder: (context) => SaucePage())
+  //         );
+  //       },
+  //     ),
+  //     SizedBox(height: 250),
+  //     FloatingActionButton.extended(
+  //       onPressed: () {
+  //         Navigator.push(
+  //           context,
+  //           MaterialPageRoute(builder: (context) => OrderSumPage())
+  //         );
+  //       },
+  //       backgroundColor: Colors.red,
+  //       label: Text(
+  //         'View Order Summary', 
+  //         style: TextStyle(
+  //           fontSize: 20,
+  //           color: Colors.white,
+  //         )
+  //       ),
+  //     ),
+  //   ],
+  //   );
+  // return listView;
 }
 

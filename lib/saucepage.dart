@@ -37,53 +37,72 @@ import 'package:cloud_firestore/cloud_firestore.dart';
   }
   // Makes list of buttons for Sauce Page
   Widget getSauceList(BuildContext context) {
-  var listView = ListView(
-    children: <Widget> [
-      // Chipotle Sauce
-      ListTile(
-        trailing: Icon(Icons.check_box_outline_blank),
-        title: Text(
-          "Chipotle Sauce",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),  
-        ),
-        onTap: () {},
-      ),
-      // Honey Mustard
-      ListTile(
-        trailing: Icon(Icons.check_box_outline_blank),
-        title: Text(
-          "Honey Mustard",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),  
-        ),
-        onTap: () {},
-      ),
-      // Mayonnaise
-      ListTile(
-        trailing: Icon(Icons.check_box_outline_blank),
-        title: Text(
-          "Mayonnaise",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),  
-        ),
-        onTap: () {},
-      ),
-      // Yellow Mustard
-      ListTile(
-        trailing: Icon(Icons.check_box_outline_blank),
-        title: Text(
-          "Yellow Mustard",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),  
-        ),
-        onTap: () {},
-      ),
-    ],
-  );
-  return listView;
+    final List<String> sauces = <String>["sauce 1","sauce 2"];
+
+    var listView = ListView.builder(
+      itemCount: sauces.length,
+      itemBuilder: (BuildContext context, int index){
+        return new Container(
+          child: ListTile(
+            trailing: Icon(Icons.check_box_outline_blank),
+            title: Text(sauces[index],
+              style: TextStyle(
+                fontWeight: FontWeight.bold
+              )
+            ),
+          )
+        );
+      }
+   );
+
+    return listView;
+  // var listView = ListView(
+  //   children: <Widget> [
+  //     // Chipotle Sauce
+  //     ListTile(
+  //       trailing: Icon(Icons.check_box_outline_blank),
+  //       title: Text(
+  //         "Chipotle Sauce",
+  //         style: TextStyle(
+  //           fontWeight: FontWeight.bold,
+  //         ),  
+  //       ),
+  //       onTap: () {},
+  //     ),
+  //     // Honey Mustard
+  //     ListTile(
+  //       trailing: Icon(Icons.check_box_outline_blank),
+  //       title: Text(
+  //         "Honey Mustard",
+  //         style: TextStyle(
+  //           fontWeight: FontWeight.bold,
+  //         ),  
+  //       ),
+  //       onTap: () {},
+  //     ),
+  //     // Mayonnaise
+  //     ListTile(
+  //       trailing: Icon(Icons.check_box_outline_blank),
+  //       title: Text(
+  //         "Mayonnaise",
+  //         style: TextStyle(
+  //           fontWeight: FontWeight.bold,
+  //         ),  
+  //       ),
+  //       onTap: () {},
+  //     ),
+  //     // Yellow Mustard
+  //     ListTile(
+  //       trailing: Icon(Icons.check_box_outline_blank),
+  //       title: Text(
+  //         "Yellow Mustard",
+  //         style: TextStyle(
+  //           fontWeight: FontWeight.bold,
+  //         ),  
+  //       ),
+  //       onTap: () {},
+  //     ),
+  //   ],
+  // );
+  // return listView;
 }
