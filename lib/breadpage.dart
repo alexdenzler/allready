@@ -13,14 +13,14 @@ class BreadPage extends StatefulWidget{
     }
 
   class _BreadPageState extends State<BreadPage>{
-  List<bool> checked = <bool>[false,false,false];
+  List<bool> checked = <bool>[false,false,false,false,false,false];
   
 
     @override 
     Widget build(BuildContext context) {
       
-      print(globals.theList);
-      final List<String> breads = <String>["White Bread","Wheat","Multigrain"];
+      //print(globals.theList);
+      final List<String> breads = <String>["White Bread","Wheat Bread","Multigrain Bread","White Wrap","Wheat Wrap","Spinach Wrap"];
       return Scaffold(
       backgroundColor: Colors.grey[500],
         appBar: AppBar(

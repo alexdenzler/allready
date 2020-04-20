@@ -34,6 +34,7 @@ class ItemTypePage extends StatelessWidget {
       backgroundColor: Colors.blueGrey[300],
     ),
       body: getItemTypeList(context),
+      
     );
   }
 } 
