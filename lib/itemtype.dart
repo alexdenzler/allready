@@ -34,7 +34,18 @@ class ItemTypePage extends StatelessWidget {
       backgroundColor: Colors.blueGrey[300],
     ),
       body: getItemTypeList(context),
-      
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem> [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            title: Text('Home'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart),
+            title: Text('Checkout'),
+            ),
+        ]
+      ),
     );
   }
 } 
