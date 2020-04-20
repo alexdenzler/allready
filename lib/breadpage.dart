@@ -17,8 +17,7 @@ class BreadPage extends StatefulWidget{
     @override 
     Widget build(BuildContext context) {
       print(globals.orderList);
-      final List<String> breads = <String>["White Bread","Wheat"];
-      print("breadlist: "+ globals.breadList.toString());
+      final List<String> breads = <String>["Multigrain Bread","Spinach Wrap","Wheat Bread","White Bread","Wheat Wrap","White Wrap"];
       return Scaffold(
       backgroundColor: Colors.grey[500],
         appBar: AppBar(
