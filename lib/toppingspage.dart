@@ -14,8 +14,8 @@ import 'globals.dart' as globals;
   }
 
   class _ToppingsPageState extends State<ToppingsPage> {
-    //list of bool values of whether each item is checked or not
-    List<bool> checked = <bool>[false,false];
+    //list of bool values of whether each item is globals.toppingsList or not
+
     
     @override
   Widget build(BuildContext context) {
@@ -44,17 +44,17 @@ import 'globals.dart' as globals;
                     style: TextStyle(
                     fontWeight: FontWeight.bold
                     )),
-                    value: checked[index],
+                    value: globals.toppingsList[index],
                     onChanged: (val) {
                       setState(() {
-                        checked[index] = val;
-                        if ((checked[index]) && (!globals.theList.contains(toppings[index]))){
-                            globals.theList.add(toppings[index]);
-                            print(globals.theList);
+                        globals.toppingsList[index] = val;
+                        if ((globals.toppingsList[index]) && (!globals.orderList.contains(toppings[index]))){
+                            globals.orderList.add(toppings[index]);
+                            print(globals.orderList);
                         }
-                        else if (!checked[index]){
-                          globals.theList.remove(toppings[index]);
-                          print(globals.theList);
+                        else if (!globals.toppingsList[index]){
+                          globals.orderList.remove(toppings[index]);
+                          print(globals.orderList);
                         }
                       });
                     },

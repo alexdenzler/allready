@@ -13,7 +13,7 @@ import 'globals.dart' as globals;
   }
 
   class _SaucePageState extends State<SaucePage> {
-    List<bool> checked = <bool>[false,false];
+    
     @override 
     Widget build(BuildContext context) {
       final List<String> sauces = <String>["Mayo","Chipotle"];
@@ -42,17 +42,17 @@ import 'globals.dart' as globals;
                     style: TextStyle(
                     fontWeight: FontWeight.bold
                     )),
-                    value: checked[index],
+                    value: globals.sauceList[index],
                     onChanged: (val) {
                       setState(() {
-                        checked[index] = val;
-                        if ((checked[index]) && (!globals.theList.contains(sauces[index]))){
-                            globals.theList.add(sauces[index]);
-                            print(globals.theList);
+                        globals.sauceList[index] = val;
+                        if ((globals.sauceList[index]) && (!globals.orderList.contains(sauces[index]))){
+                            globals.orderList.add(sauces[index]);
+                            print(globals.orderList);
                         }
-                        else if (!checked[index]){
-                          globals.theList.remove(sauces[index]);
-                          print(globals.theList);
+                        else if (!globals.sauceList[index]){
+                          globals.orderList.remove(sauces[index]);
+                          print(globals.orderList);
                         }
                       });
                     },

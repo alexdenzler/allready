@@ -13,14 +13,11 @@ class BreadPage extends StatefulWidget{
     }
 
   class _BreadPageState extends State<BreadPage>{
-  List<bool> checked = <bool>[false,false,false,false,false,false];
-  
 
     @override 
     Widget build(BuildContext context) {
-      
-      //print(globals.theList);
-      final List<String> breads = <String>["White Bread","Wheat Bread","Multigrain Bread","White Wrap","Wheat Wrap","Spinach Wrap"];
+      print(globals.orderList);
+      final List<String> breads = <String>["White Bread","Wheat"];
       return Scaffold(
       backgroundColor: Colors.grey[500],
         appBar: AppBar(
@@ -46,17 +43,17 @@ class BreadPage extends StatefulWidget{
         style: TextStyle(
         fontWeight: FontWeight.bold
             )),
-              value: checked[index],
+              value: globals.breadList[index],
               onChanged: (val) {
               setState(() {
-                checked[index] = val;
-                if ((checked[index]) && (!globals.theList.contains(breads[index]))){
-                    globals.theList.add(breads[index]);
-                    print(globals.theList);
+                globals.breadList[index] = val;
+                if ((globals.breadList[index]) && (!globals.orderList.contains(breads[index]))){
+                    globals.orderList.add(breads[index]);
+                    print(globals.orderList);
                 }
-                else if (!checked[index]){
-                  globals.theList.remove(breads[index]);
-                  print(globals.theList);
+                else if (!globals.breadList[index]){
+                  globals.orderList.remove(breads[index]);
+                  print(globals.orderList);
                 }
                     });
                   },

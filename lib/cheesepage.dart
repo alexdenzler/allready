@@ -12,13 +12,11 @@ import 'globals.dart' as globals;
   }
   
   class _CheesePageState extends State<CheesePage> {
-    //list of bool values of whether each item is checked or not
-    List<bool> checked = <bool>[false,false];
-    final List<String> cheeses = <String>["Swiss","American"];
-    List<String> breadOrder = [];
+    //list of bool values of whether each item is globals.cheeseList or not
    
     @override 
     Widget build(BuildContext context) {
+      List<String> cheeses = <String>["Swiss","American"];
       return Scaffold(
         backgroundColor: Colors.grey[500],
         appBar: AppBar(
@@ -44,17 +42,17 @@ import 'globals.dart' as globals;
                     style: TextStyle(
                     fontWeight: FontWeight.bold
                     )),
-                    value: checked[index],
+                    value: globals.cheeseList[index],
                     onChanged: (val) {
                       setState(() {
-                        checked[index] = val;
-                        if ((checked[index]) && (!globals.theList.contains(cheeses[index]))){
-                            globals.theList.add(cheeses[index]);
-                            print(globals.theList);
+                        globals.cheeseList[index] = val;
+                        if ((globals.cheeseList[index]) && (!globals.orderList.contains(cheeses[index]))){
+                            globals.orderList.add(cheeses[index]);
+                            print(globals.orderList);
                         }
-                        else if (!checked[index]){
-                          globals.theList.remove(cheeses[index]);
-                          print(globals.theList);
+                        else if (!globals.cheeseList[index]){
+                          globals.orderList.remove(cheeses[index]);
+                          print(globals.orderList);
                         }
                         
                       });
