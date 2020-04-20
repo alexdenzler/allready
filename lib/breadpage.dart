@@ -18,6 +18,7 @@ class BreadPage extends StatefulWidget{
     Widget build(BuildContext context) {
       print(globals.orderList);
       final List<String> breads = <String>["White Bread","Wheat"];
+      print("breadlist: "+ globals.breadList.toString());
       return Scaffold(
       backgroundColor: Colors.grey[500],
         appBar: AppBar(
@@ -34,6 +35,7 @@ class BreadPage extends StatefulWidget{
       centerTitle: true,
       backgroundColor: Colors.blueGrey[300],
       ),
+      
       body: ListView.builder(
         itemCount: breads.length,
         itemBuilder: (BuildContext context, int index){
@@ -44,12 +46,14 @@ class BreadPage extends StatefulWidget{
         fontWeight: FontWeight.bold
             )),
               value: globals.breadList[index],
+              
               onChanged: (val) {
               setState(() {
                 globals.breadList[index] = val;
                 if ((globals.breadList[index]) && (!globals.orderList.contains(breads[index]))){
                     globals.orderList.add(breads[index]);
                     print(globals.orderList);
+                    
                 }
                 else if (!globals.breadList[index]){
                   globals.orderList.remove(breads[index]);
