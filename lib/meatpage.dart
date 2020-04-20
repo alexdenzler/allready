@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
+import 'globals.dart' as globals;
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // MeatPage
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -45,34 +45,21 @@ import 'package:cloud_firestore/cloud_firestore.dart';
                     onChanged: (val) {
                       setState(() {
                         checked[index] = val;
+                        if ((checked[index]) && (!globals.theList.contains(meats[index]))){
+                            globals.theList.add(meats[index]);
+                            print(globals.theList);
+                        }
+                        else if (!checked[index]){
+                          globals.theList.remove(meats[index]);
+                          print(globals.theList);
+                        }
                       });
                     },
                   ),
                 );
               }
-            ),
-        //getMeatList(context),
+            )
       );
     }
   }
-  // Makes list of buttons for MeatPage
-//   Widget getMeatList(BuildContext context) {
-//     final List<String> meats = <String>["meat 1","meat 2"];
-    
-//     var listView = ListView.builder(
-//       itemCount: meats.length,
-//       itemBuilder: (BuildContext context, int index){
-//         return new Container(
-//           child: ListTile(
-//             trailing: Icon(Icons.check_box_outline_blank),
-//             title: Text(meats[index],
-//               style: TextStyle(
-//                 fontWeight: FontWeight.bold
-//               )
-//             ),
-//           )
-//         );
-//       }
-//    );
-//   return listView;
-// }
+ 

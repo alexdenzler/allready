@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
+import 'globals.dart' as globals;
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // SaucePage
@@ -46,34 +46,20 @@ import 'package:cloud_firestore/cloud_firestore.dart';
                     onChanged: (val) {
                       setState(() {
                         checked[index] = val;
+                        if ((checked[index]) && (!globals.theList.contains(sauces[index]))){
+                            globals.theList.add(sauces[index]);
+                            print(globals.theList);
+                        }
+                        else if (!checked[index]){
+                          globals.theList.remove(sauces[index]);
+                          print(globals.theList);
+                        }
                       });
                     },
                   ),
                 );
               }
             ),
-//        getSauceList(context,)
       );
     }
   }
-  // Makes list of buttons for Sauce Page
-//   Widget getSauceList(BuildContext context) {
-//     final List<String> sauces = <String>["sauce 1","sauce 2"];
-
-//     var listView = ListView.builder(
-//       itemCount: sauces.length,
-//       itemBuilder: (BuildContext context, int index){
-//         return new Container(
-//           child: ListTile(
-//             trailing: Icon(Icons.check_box_outline_blank),
-//             title: Text(sauces[index],
-//               style: TextStyle(
-//                 fontWeight: FontWeight.bold
-//               )
-//             ),
-//           )
-//         );
-//       }
-//    );
-//   return listView;
-// }

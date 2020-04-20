@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'globals.dart' as globals;
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // BreadPage
@@ -17,6 +18,8 @@ class BreadPage extends StatefulWidget{
 
     @override 
     Widget build(BuildContext context) {
+      
+      print(globals.theList);
       final List<String> breads = <String>["White Bread","Wheat","Multigrain"];
       return Scaffold(
       backgroundColor: Colors.grey[500],
@@ -47,34 +50,21 @@ class BreadPage extends StatefulWidget{
               onChanged: (val) {
               setState(() {
                 checked[index] = val;
+                if ((checked[index]) && (!globals.theList.contains(breads[index]))){
+                    globals.theList.add(breads[index]);
+                    print(globals.theList);
+                }
+                else if (!checked[index]){
+                  globals.theList.remove(breads[index]);
+                  print(globals.theList);
+                }
                     });
                   },
                 ),
               );
             }
           ),
-      //getBreadList(context),
       );
     }
   }
-    // Makes list of buttons for BreadPage
-//   Widget getBreadList(BuildContext context) {
-//     final List<String> breads = <String>["bread 1","bread 2"];
-
-//     var listView = ListView.builder(
-//       itemCount: breads.length,
-//       itemBuilder: (BuildContext context, int index){
-//         return new Container(
-//           child: ListTile(
-//             trailing: Icon(Icons.check_box_outline_blank),
-//             title: Text(breads[index],
-//               style: TextStyle(
-//                 fontWeight: FontWeight.bold
-//               )
-//             ),
-//           )
-//         );
-//       }
-//    );
-//   return listView;
-// }
+ 

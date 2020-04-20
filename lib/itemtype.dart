@@ -8,6 +8,7 @@ import 'cheesepage.dart';
 import 'toppingspage.dart';
 import 'saucepage.dart';
 import 'ordersummary.dart';
+import 'globals.dart' as global;
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ItemTypePage
