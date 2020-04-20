@@ -52,7 +52,7 @@ class HomePage extends StatelessWidget {
                   context,
                 MaterialPageRoute(builder: (context) => ItemTypePage())
                 );
-                globals.theList.clear();
+                globals.orderList.clear();
               },
               child: const Text(
                 'Start Order',
