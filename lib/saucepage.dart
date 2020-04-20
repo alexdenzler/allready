@@ -16,7 +16,7 @@ import 'globals.dart' as globals;
     
     @override 
     Widget build(BuildContext context) {
-      final List<String> sauces = <String>["Mayo","Chipotle"];
+      final List<String> sauces = <String>["Chipotle Sauce","Honey Mustard","Mayonnaise","Yellow Mustard"];
       return Scaffold(
         backgroundColor: Colors.grey[500],
         appBar: AppBar(

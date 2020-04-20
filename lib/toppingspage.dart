@@ -19,7 +19,7 @@ import 'globals.dart' as globals;
     
     @override
   Widget build(BuildContext context) {
-    final List<String> toppings = <String>["Tomatoes","Lettuce"];
+    final List<String> toppings = <String>["Cucumber","Green Papper","Lettuce","Onion","Spinach","Tomato"];
     return Scaffold(
       backgroundColor: Colors.grey[500],
       appBar: AppBar(
