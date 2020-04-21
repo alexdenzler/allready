@@ -16,7 +16,6 @@ import 'globals.dart' as globals;
    
     @override 
     Widget build(BuildContext context) {
-      List<String> cheeses = <String>["American","Cheddar","Pepperjack","Provolone","Swiss"];
       return Scaffold(
         backgroundColor: Colors.grey[500],
         appBar: AppBar(
@@ -34,11 +33,11 @@ import 'globals.dart' as globals;
       backgroundColor: Colors.blueGrey[300],
     ),
         body: ListView.builder(
-              itemCount: cheeses.length,
+              itemCount: globals.cheeses.length,
               itemBuilder: (BuildContext context, int index){
                 return Container(
                   child: CheckboxListTile(
-                    title: Text(cheeses[index],
+                    title: Text(globals.cheeses[index],
                     style: TextStyle(
                     fontWeight: FontWeight.bold
                     )),
@@ -46,12 +45,12 @@ import 'globals.dart' as globals;
                     onChanged: (val) {
                       setState(() {
                         globals.cheeseList[index] = val;
-                        if ((globals.cheeseList[index]) && (!globals.orderList.contains(cheeses[index]))){
-                            globals.orderList.add(cheeses[index]);
+                        if ((globals.cheeseList[index]) && (!globals.orderList.contains(globals.cheeses[index]))){
+                            globals.orderList.add(globals.cheeses[index]);
                             print(globals.orderList);
                         }
                         else if (!globals.cheeseList[index]){
-                          globals.orderList.remove(cheeses[index]);
+                          globals.orderList.remove(globals.cheeses[index]);
                           print(globals.orderList);
                         }
                         

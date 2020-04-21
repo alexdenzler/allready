@@ -17,7 +17,6 @@ class BreadPage extends StatefulWidget{
     @override 
     Widget build(BuildContext context) {
       print(globals.orderList);
-      final List<String> breads = <String>["Multigrain Bread","Spinach Wrap","Wheat Bread","White Bread","Wheat Wrap","White Wrap"];
       return Scaffold(
       backgroundColor: Colors.grey[500],
         appBar: AppBar(
@@ -36,11 +35,11 @@ class BreadPage extends StatefulWidget{
       ),
       
       body: ListView.builder(
-        itemCount: breads.length,
+        itemCount: globals.breads.length,
         itemBuilder: (BuildContext context, int index){
           return Container(
         child: CheckboxListTile(
-        title: Text(breads[index],
+        title: Text(globals.breads[index],
         style: TextStyle(
         fontWeight: FontWeight.bold
             )),
@@ -49,13 +48,13 @@ class BreadPage extends StatefulWidget{
               onChanged: (val) {
               setState(() {
                 globals.breadList[index] = val;
-                if ((globals.breadList[index]) && (!globals.orderList.contains(breads[index]))){
-                    globals.orderList.add(breads[index]);
+                if ((globals.breadList[index]) && (!globals.orderList.contains(globals.breads[index]))){
+                    globals.orderList.add(globals.breads[index]);
                     print(globals.orderList);
                     
                 }
                 else if (!globals.breadList[index]){
-                  globals.orderList.remove(breads[index]);
+                  globals.orderList.remove(globals.breads[index]);
                   print(globals.orderList);
                 }
                     });

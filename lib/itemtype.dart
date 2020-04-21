@@ -2,13 +2,8 @@ import 'dart:collection';
 
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'breadpage.dart';
-import 'meatpage.dart';
-import 'cheesepage.dart';
-import 'toppingspage.dart';
-import 'saucepage.dart';
 import 'ordersummary.dart';
-import 'globals.dart' as global;
+import 'globals.dart' as globals;
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ItemTypePage
@@ -51,16 +46,14 @@ class ItemTypePage extends StatelessWidget {
 } 
 // Makes list of buttons for ItemTypePage
 Widget getItemTypeList(BuildContext context) {
-  final List<String> itemTypes = <String>['Bread', 'Meat', 'Cheese', 'Toppings', 'Sauce'];
-  final List<dynamic> pages = <dynamic>[BreadPage(), MeatPage(), CheesePage(), ToppingsPage(), SaucePage()];
   
   var listView = ListView.builder(
-      itemCount: itemTypes.length,
+      itemCount: globals.itemTypes.length,
       itemBuilder: (BuildContext context, int index){
         return new Container(
           child: ListTile(
             trailing: Icon(Icons.arrow_right, color: Colors.red[600], size: 40),
-            title: Text(itemTypes[index],
+            title: Text(globals.itemTypes[index],
               style: TextStyle(
                 fontWeight: FontWeight.bold
               )
@@ -68,7 +61,7 @@ Widget getItemTypeList(BuildContext context) {
           onTap: () {
             Navigator.push(
               context, 
-              MaterialPageRoute(builder: (context) => pages[index])
+              MaterialPageRoute(builder: (context) => globals.pages[index])
             );
           },
           )
