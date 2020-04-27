@@ -5,65 +5,65 @@ import 'globals.dart' as globals;
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // BreadPage
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class BreadPage extends StatefulWidget{
-    const BreadPage({ Key key }) : super(key: key);
+class BreadPage extends StatefulWidget {
+  var category;
 
-    @override
-    _BreadPageState createState() => _BreadPageState();
-    }
+  // const BreadPage({ Key key }) : super(key: key);
 
-  class _BreadPageState extends State<BreadPage>{
+  BreadPage({this.category});
 
-    @override 
-    Widget build(BuildContext context) {
-      print(globals.orderList);
-      return Scaffold(
+  @override
+  _BreadPageState createState() => _BreadPageState(category: this.category);
+}
+
+class _BreadPageState extends State<BreadPage> {
+  var category;
+
+  _BreadPageState({this.category});
+
+  @override
+  Widget build(BuildContext context) {
+    print(globals.orderList);
+    return Scaffold(
       backgroundColor: Colors.grey[500],
-        appBar: AppBar(
+      appBar: AppBar(
         title: Text(
-        'AllReady',
-      style: TextStyle(
-          fontSize: 30.0,
-          fontWeight: FontWeight.bold,
-          letterSpacing: 2.0,
-          color: Colors.red[600],
-          fontFamily: 'ShadowsIntoLight',
-        ),
-      ),
-      centerTitle: true,
-      backgroundColor: Colors.blueGrey[300],
-      ),
-      
-      body: ListView.builder(
-        itemCount: globals.breads.length,
-        itemBuilder: (BuildContext context, int index){
-          return Container(
-        child: CheckboxListTile(
-        title: Text(globals.breads[index],
-        style: TextStyle(
-        fontWeight: FontWeight.bold
-            )),
-              value: globals.breadList[index],
-              
-              onChanged: (val) {
-              setState(() {
-                globals.breadList[index] = val;
-                if ((globals.breadList[index]) && (!globals.orderList.contains(globals.breads[index]))){
-                    globals.orderList.add(globals.breads[index]);
-                    print(globals.orderList);
-                    
-                }
-                else if (!globals.breadList[index]){
-                  globals.orderList.remove(globals.breads[index]);
-                  print(globals.orderList);
-                }
-                    });
-                  },
-                ),
-              );
-            }
+          'AllReady',
+          style: TextStyle(
+            fontSize: 30.0,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 2.0,
+            color: Colors.red[600],
+            fontFamily: 'ShadowsIntoLight',
           ),
-      );
-    }
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.blueGrey[300],
+      ),
+      body: ListView.builder(
+          itemCount: category["choices"].length,
+          itemBuilder: (BuildContext context, int index) {
+            return Container(
+              child: CheckboxListTile(
+                title: Text(category["choices"][index]["name"],
+                    style: TextStyle(fontWeight: FontWeight.bold)),
+                value: category["choices"][index]["selected"],
+                onChanged: (val) {
+                  setState(() {
+                //     globals.breadList[index] = val;
+                //     if ((globals.breadList[index]) &&
+                //         (!globals.orderList.contains(globals.breads[index]))) {
+                //       globals.orderList.add(globals.breads[index]);
+                //       print(globals.orderList);
+                //     } else if (!globals.breadList[index]) {
+                //       globals.orderList.remove(globals.breads[index]);
+                //       print(globals.orderList);
+                //     }
+                  });
+                },
+              ),
+            );
+          }),
+    );
   }
- 
+}
