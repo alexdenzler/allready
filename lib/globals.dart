@@ -45,6 +45,18 @@ List<dynamic> categories =[
       "name": "Cheddar",
       "selected": false
     },
+    {
+      "name": "Swiss",
+      "selected": false
+    },
+    {
+      "name": "Pepperjack",
+      "selected": false
+    },
+    {
+      "name": "Provolone",
+      "selected": false
+    },
     ]
   },
   {
@@ -57,18 +69,42 @@ List<dynamic> categories =[
       {
         "name": "Turkey",
         "selected": false
-      }
+      },
+      {
+        "name": "Salami",
+        "selected": false
+      },
+      {
+        "name": "Bacon",
+        "selected": false
+      },
     ]
   },
   {
     "name": "Toppings",
     "choices": [
       {
-        "name": "Cucumber",
+        "name": "Lettuce",
         "selected": false
       },
       {
-        "name": "Tomato",
+        "name": "Spinach",
+        "selected": false
+      },
+      {
+        "name": "Tomatoes",
+        "selected": false
+      },
+      {
+        "name": "Onions",
+        "selected": false
+      },
+      {
+        "name": "Cucumbers",
+        "selected": false
+      },
+      {
+        "name": "Peppers",
         "selected": false
       }
     ]
@@ -77,11 +113,23 @@ List<dynamic> categories =[
     "name": "Sauce",
     "choices": [
       {
-        "name": "Mustard",
+        "name": "Yellow Mustard",
+        "selected": false
+      },
+      {
+        "name": "Honey Mustard",
         "selected": false
       },
       {
         "name": "Mayo",
+        "selected": false
+      },
+      {
+        "name": "Chipotle Mayo",
+        "selected": false
+      },
+      {
+        "name": "Hot Sauce",
         "selected": false
       }
     ]
