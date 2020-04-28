@@ -1,8 +1,6 @@
-import 'dart:collection';
-
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'breadpage.dart';
+import 'chooseitem.dart';
 import 'ordersummary.dart';
 import 'globals.dart' as globals;
 
@@ -62,7 +60,7 @@ Widget getItemTypeList(BuildContext context) {
           onTap: () {
             Navigator.push(
               context, 
-              MaterialPageRoute(builder: (context) => BreadPage(category: globals.categories[index]))
+              MaterialPageRoute(builder: (context) => ChooseItem(category: globals.categories[index]))
             );
           },
           )

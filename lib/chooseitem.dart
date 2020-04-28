@@ -3,23 +3,21 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'globals.dart' as globals;
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// BreadPage
+// Choose Item
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class BreadPage extends StatefulWidget {
+class ChooseItem extends StatefulWidget {
   var category;
 
-  // const BreadPage({ Key key }) : super(key: key);
-
-  BreadPage({this.category});
+  ChooseItem({this.category});
 
   @override
-  _BreadPageState createState() => _BreadPageState(category: this.category);
+  _ChooseItemState createState() => _ChooseItemState(category: this.category);
 }
 
-class _BreadPageState extends State<BreadPage> {
+class _ChooseItemState extends State<ChooseItem> {
   var category;
 
-  _BreadPageState({this.category});
+  _ChooseItemState({this.category});
 
   @override
   Widget build(BuildContext context) {

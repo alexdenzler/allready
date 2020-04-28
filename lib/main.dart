@@ -51,12 +51,6 @@ class HomePage extends StatelessWidget {
                   context,
                 MaterialPageRoute(builder: (context) => ItemTypePage())
                 );
-                // globals.orderList.clear();
-                // globals.breadList.setAll(0, [false, false, false, false, false, false]);
-                // globals.cheeseList.setAll(0, [false, false, false, false, false]);
-                // globals.meatList.setAll(0, [false,false,false,false,false]);
-                // globals.sauceList.setAll(0, [false,false,false,false]);
-                // globals.toppingsList.setAll(0, [false, false, false, false, false, false]);
               },
               child: const Text(
                 'Start Order',
