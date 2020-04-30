@@ -6,8 +6,20 @@ import 'globals.dart' as globals;
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Order Summary Page
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class OrderSumPage extends StatelessWidget {
-  const OrderSumPage({Key key}) : super(key: key);
+class OrderSumPage extends StatefulWidget {
+  var pages;
+
+  OrderSumPage({this.pages});
+
+  @override
+  _OrderSumState createState() => _OrderSumState(pages: this.pages);
+}
+
+class _OrderSumState extends State<OrderSumPage> {
+  var pages;
+
+  _OrderSumState({this.pages});
+
   @override
   Widget build(BuildContext context) {
     // String orderString = global.theList.toString();
@@ -28,7 +40,26 @@ class OrderSumPage extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.blueGrey[300],
         ),
-        body: getOrderList(context));
+        body: getOrderList(context),
+        bottomNavigationBar: Align(
+          alignment: Alignment.bottomCenter,
+          widthFactor: 40,
+          child: FlatButton(
+            color: Colors.red[600],
+            textColor: Colors.white,
+            onPressed: () {
+              setState(() {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => globals.bottomNavPages[0]));
+                globals.orderList = [];
+              });
+            },
+            child: Text('Restart Order',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
+          ),
+        ));
   }
 }
 

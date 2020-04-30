@@ -3,7 +3,7 @@ library globals;
 import 'main.dart';
 import 'ordersummary.dart';
 
-List<String> orderList = [];
+List<String> orderList = ['bah', 'shmah', 'glah'];
 
 List<dynamic> categories = [
   {
