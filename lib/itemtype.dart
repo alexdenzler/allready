@@ -1,14 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'chooseitem.dart';
-import 'ordersummary.dart';
 import 'globals.dart' as globals;
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ItemTypePage
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class ItemTypePage extends StatelessWidget {
-  const ItemTypePage({ Key key }) : super(key: key);
+class ItemTypePage extends StatefulWidget{
+  var pages; 
+
+  ItemTypePage({this.pages});
+
+  @override
+  _ItemTypeState createState() => _ItemTypeState(pages: this.pages);
+}
+
+
+class _ItemTypeState extends State<ItemTypePage> {
+  var pages;
+  int _index = 0;
+
+  _ItemTypeState({this.pages});
+
   @override 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,18 +44,29 @@ class ItemTypePage extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem> [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Home'),
+            icon: Icon(Icons.home, color: Colors.white),
+            title: Text('Home', style: TextStyle(color: Colors.white)),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart),
-            title: Text('Checkout'),
+            icon: Icon(Icons.shopping_cart, color: Colors.white),
+            title: Text('Checkout', style: TextStyle(color: Colors.white)),
             ),
-        ]
+        ],
+        currentIndex: _index,
+        onTap: (int index) {setState(() {
+          _index = index;
+          Navigator.push(
+              context, 
+              MaterialPageRoute(builder: (context) => globals.bottomNavPages[index])
+            );
+        });
+        },
+        backgroundColor: Colors.red[600],
       ),
     );
   }
 } 
+
 // Makes list of buttons for ItemTypePage
 Widget getItemTypeList(BuildContext context) {
   

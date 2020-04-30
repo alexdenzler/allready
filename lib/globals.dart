@@ -1,4 +1,6 @@
 library globals;
+import 'main.dart';
+import 'ordersummary.dart';
 
 List<String> orderList = [];
 
@@ -135,4 +137,10 @@ List<dynamic> categories =[
     ]
   }
 ];
+
+List<dynamic> bottomNavPages = [
+  HomePage(),
+  OrderSumPage()
+];
+
 
