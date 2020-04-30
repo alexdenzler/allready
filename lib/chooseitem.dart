@@ -48,15 +48,17 @@ class _ChooseItemState extends State<ChooseItem> {
                 value: category["choices"][index]["selected"],
                 onChanged: (val) {
                   setState(() {
-                category["choices"][index]["selected"] = val;
+                    category["choices"][index]["selected"] = val;
                     if ((category["choices"][index]["selected"]) &&
-                    (!globals.orderList.contains(category["choices"][index]["name"]))) {
+                        (!globals.orderList
+                            .contains(category["choices"][index]["name"]))) {
                       globals.orderList.add(category["choices"][index]["name"]);
                       print(globals.orderList);
                     } else if (!category["choices"][index]["selected"]) {
-                        globals.orderList.remove(category["choices"][index]["name"]);
-                        print(globals.orderList);
-                        }
+                      globals.orderList
+                          .remove(category["choices"][index]["name"]);
+                      print(globals.orderList);
+                    }
                   });
                 },
               ),
