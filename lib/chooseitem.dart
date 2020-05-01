@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+//import 'package:cloud_firestore/cloud_firestore.dart';
 import 'globals.dart' as globals;
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Choose Item
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class ChooseItem extends StatefulWidget {
-  var category;
+  final category;
 
   ChooseItem({this.category});
 
@@ -21,7 +21,6 @@ class _ChooseItemState extends State<ChooseItem> {
 
   @override
   Widget build(BuildContext context) {
-    print(globals.orderList);
     return Scaffold(
       backgroundColor: Colors.grey[500],
       appBar: AppBar(
