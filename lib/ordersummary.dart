@@ -22,44 +22,50 @@ class _OrderSumState extends State<OrderSumPage> {
 
   @override
   Widget build(BuildContext context) {
-    // String orderString = global.theList.toString();
-    // print(orderString);
     return Scaffold(
-        backgroundColor: Colors.grey[500],
-        appBar: AppBar(
-          title: Text(
-            'AllReady',
-            style: TextStyle(
-              fontSize: 30.0,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 2.0,
-              color: Colors.red[600],
-              fontFamily: 'ShadowsIntoLight',
-            ),
-          ),
-          centerTitle: true,
-          backgroundColor: Colors.blueGrey[300],
-        ),
-        body: getOrderList(context),
-        bottomNavigationBar: Align(
-          alignment: Alignment.bottomCenter,
-          widthFactor: 40,
-          child: FlatButton(
+      backgroundColor: Colors.grey[500],
+      appBar: AppBar(
+        title: Text(
+          'AllReady',
+          style: TextStyle(
+            fontSize: 30.0,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 2.0,
             color: Colors.red[600],
-            textColor: Colors.white,
-            onPressed: () {
-              setState(() {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => globals.bottomNavPages[0]));
-                globals.orderList = [];
-              });
-            },
-            child: Text('Restart Order',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
+            fontFamily: 'ShadowsIntoLight',
           ),
-        ));
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.blueGrey[300],
+      ),
+      body: getOrderList(context),
+      floatingActionButton: Align(
+        alignment: Alignment.bottomCenter,
+        widthFactor: 40,
+        child: FlatButton(
+          color: Colors.red[600],
+          textColor: Colors.white,
+          onPressed: () {
+            setState(() {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => globals.bottomNavPages[0]));
+              globals.orderList = [];
+              for(var i in globals.categories){
+                for (var j in i["choices"]){
+                  if (j["selected"] == true){
+                    j["selected"] = false;
+                  }
+                }   
+              }
+            });
+          },
+          child: Text('Restart Order',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
+        ),
+      ),
+    );
   }
 }
 
