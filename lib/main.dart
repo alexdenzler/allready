@@ -16,11 +16,7 @@ void main() => runApp(MaterialApp(
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // final databaseRef = Firestore.instance;
-    // void startOrder() async{
-    //   await databaseRef.collection("orderlists").getDocuments().then((QuerySnapshot snapshot) {
-    // snapshot.documents.forEach((f) => print('${f.data}}'));});
-    // }
+    
     //test
     return Scaffold(
       backgroundColor: Colors.grey[500],
@@ -48,7 +44,6 @@ class HomePage extends StatelessWidget {
                     'https://themacweekly.com/wp-content/uploads/2018/01/Atrium_news_Rait18-1024x613.jpg'),
                 RaisedButton(
                   onPressed: () {
-                    //      startOrder();
                     Navigator.push(
                         context,
                         MaterialPageRoute(

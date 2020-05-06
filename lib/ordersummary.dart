@@ -7,7 +7,7 @@ import 'globals.dart' as globals;
 // Order Summary Page
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class OrderSumPage extends StatefulWidget {
-  var pages;
+  final pages;
 
   OrderSumPage({this.pages});
 
@@ -22,6 +22,12 @@ class _OrderSumState extends State<OrderSumPage> {
 
   @override
   Widget build(BuildContext context) {
+    final databaseRef = Firestore.instance;
+    int increment = 0;
+    void sendOrder() async{
+      await databaseRef.collection("orderlists").document("$increment").setData({"Order $increment": globals.orderList});
+      increment = increment+1;
+    }
     return Scaffold(
         backgroundColor: Colors.grey[500],
         appBar: AppBar(
@@ -57,7 +63,9 @@ class _OrderSumState extends State<OrderSumPage> {
           child: FlatButton(
             color: Colors.red[600],
             textColor: Colors.white,
-            onPressed: (){print("steve");},
+            onPressed: (){
+              sendOrder();
+            },
             child: Text('Submit Order',
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
           ),

@@ -7,7 +7,7 @@ import 'globals.dart' as globals;
 // ItemTypePage
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class ItemTypePage extends StatefulWidget {
-  var pages;
+  final pages;
 
   ItemTypePage({this.pages});
 
