@@ -65,7 +65,6 @@ class _OrderSumState extends State<OrderSumPage> {
             textColor: Colors.white,
             onPressed: (){
               //sendOrder();
-              print(globals.categories.length);
               for(int i = 0; i < globals.categories.length; i++){
                 globals.categories[i]["choices"].forEach((choice) => (print(choice['selected'] = false)));
               }

@@ -44,13 +44,16 @@ class HomePage extends StatelessWidget {
                     'https://themacweekly.com/wp-content/uploads/2018/01/Atrium_news_Rait18-1024x613.jpg'),
                 RaisedButton(
                   onPressed: () {
+                    for(int i = 0; i < globals.categories.length; i++){
+                      globals.categories[i]["choices"].forEach((choice) => (print(choice['selected'] = false)));
+                   }
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => ItemTypePage()));
                   },
                   child: const Text(
-                    'Start Order',
+                    'Start New Order',
                     style: TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
