@@ -64,7 +64,11 @@ class _OrderSumState extends State<OrderSumPage> {
             color: Colors.red[600],
             textColor: Colors.white,
             onPressed: (){
-              sendOrder();
+              //sendOrder();
+              print(globals.categories.length);
+              for(int i = 0; i < globals.categories.length; i++){
+                globals.categories[i]["choices"].forEach((choice) => (print(choice['selected'] = false)));
+              }
             },
             child: Text('Submit Order',
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
