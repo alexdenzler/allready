@@ -68,6 +68,10 @@ class _OrderSumState extends State<OrderSumPage> {
               for(int i = 0; i < globals.categories.length; i++){
                 globals.categories[i]["choices"].forEach((choice) => (print(choice['selected'] = false)));
               }
+              Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => OrderComplete()));
             },
             child: Text('Submit Order',
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
@@ -91,6 +95,61 @@ Widget getOrderList(BuildContext context) {
                         letterSpacing: 0.5))));
       });
   return listView;
+}
+
+class OrderComplete extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+            'AllReady',
+            style: TextStyle(
+              fontSize: 30.0,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 2.0,
+              color: Colors.red[600],
+              fontFamily: 'ShadowsIntoLight',
+            ),
+          ),
+          centerTitle: true,
+          backgroundColor: Colors.blueGrey[300],
+        ),
+      backgroundColor: Colors.grey[500],
+      
+      body: Column(
+        children: <Widget>[
+          Center(
+            child: Text("Order Successful!",
+            style: TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.bold,
+              color: Colors.black), 
+            )),
+          Center(
+            child: RaisedButton(
+            onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                builder: (context) => HomePage()));
+            },
+            child: Text("Return Home",
+            style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 2.0,
+                      color: Colors.white,
+                    ),
+            ),
+            color: Colors.red[600],
+          ),
+          
+          ),
+        ],
+      )
+    );
+  }
 }
 
 // Code to reset the order and return to home page.

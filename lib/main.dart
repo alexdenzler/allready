@@ -21,6 +21,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[500],
       appBar: AppBar(
+        leading: new Container(),
         title: Text(
           'AllReady',
           style: TextStyle(
@@ -40,8 +41,7 @@ class HomePage extends StatelessWidget {
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Image.network(
-                    'https://themacweekly.com/wp-content/uploads/2018/01/Atrium_news_Rait18-1024x613.jpg'),
+                Image.network('https://themacweekly.com/wp-content/uploads/2018/01/Atrium_news_Rait18-1024x613.jpg'),
                 RaisedButton(
                   onPressed: () {
                     for(int i = 0; i < globals.categories.length; i++){
