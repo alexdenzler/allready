@@ -1,3 +1,4 @@
+import 'package:allready/itemtype.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'main.dart';
@@ -45,6 +46,7 @@ class _OrderSumState extends State<OrderSumPage> {
               fontFamily: 'ShadowsIntoLight',
             ),
           ),
+          
           centerTitle: true,
           backgroundColor: Colors.blueGrey[300],
         ),
@@ -63,24 +65,46 @@ class _OrderSumState extends State<OrderSumPage> {
               }),
         ),
         bottomNavigationBar: 
-        Container(
-          child: FlatButton(
-            color: Colors.red[600],
-            textColor: Colors.white,
-            onPressed: (){
-              print(globals.increment);
-              sendOrder();
-              for(int i = 0; i < globals.categories.length; i++){
-                globals.categories[i]["choices"].forEach((choice) => (choice['selected'] = false));
-              }
-              Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => OrderComplete()));
-            },
-            child: Text('Submit Order',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Padding> [
+           Padding(
+             padding: const EdgeInsets.all(5.0),
+             child: FlatButton(
+              color: Colors.red[600],
+              textColor: Colors.white,
+              onPressed: (){
+                print(globals.increment);
+                sendOrder();
+                for(int i = 0; i < globals.categories.length; i++){
+                  globals.categories[i]["choices"].forEach((choice) => (choice['selected'] = false));
+                }
+                Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => OrderComplete()));
+              },
+              child: Text('Submit Order',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
           ),
+           ),
+          Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: FlatButton( 
+              color: Colors.red[600],
+              textColor: Colors.white,
+              onPressed: () {
+                globals.orderList = [];
+                Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ItemTypePage()));
+              },
+              child: Text("Reset Order", 
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15))
+            ),
+          )
+          ]
         ));
   }
 }
