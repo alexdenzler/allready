@@ -16,7 +16,6 @@ void main() => runApp(MaterialApp(
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    
     //test
     return Scaffold(
       backgroundColor: Colors.grey[500],
@@ -41,12 +40,15 @@ class HomePage extends StatelessWidget {
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Image.network('https://themacweekly.com/wp-content/uploads/2018/01/Atrium_news_Rait18-1024x613.jpg'),
+                Image.network(
+                    'https://themacweekly.com/wp-content/uploads/2018/01/Atrium_news_Rait18-1024x613.jpg'),
                 RaisedButton(
                   onPressed: () {
-                    for(int i = 0; i < globals.categories.length; i++){
-                      globals.categories[i]["choices"].forEach((choice) => (print(choice['selected'] = false)));
-                   }
+                    for (int i = 0; i < globals.categories.length; i++) {
+                      globals.categories[i]["choices"].forEach(
+                          (choice) => (choice['selected'] = false));
+                    }
+                    globals.orderList.clear();
                     Navigator.push(
                         context,
                         MaterialPageRoute(

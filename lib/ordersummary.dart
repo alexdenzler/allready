@@ -8,8 +8,10 @@ import 'globals.dart' as globals;
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class OrderSumPage extends StatefulWidget {
   final pages;
+  
 
   OrderSumPage({this.pages});
+  
 
   @override
   _OrderSumState createState() => _OrderSumState(pages: this.pages);
@@ -23,12 +25,14 @@ class _OrderSumState extends State<OrderSumPage> {
   @override
   Widget build(BuildContext context) {
     final databaseRef = Firestore.instance;
-    int increment = 0;
+    
     void sendOrder() async{
-      await databaseRef.collection("orderlists").document("$increment").setData({"Order $increment": globals.orderList});
-      increment = increment+1;
+      await databaseRef.collection("orderlists").document("${globals.increment}").setData({"Order ${globals.increment}": globals.orderList});
+      ++globals.increment;
     }
+
     return Scaffold(
+      
         backgroundColor: Colors.grey[500],
         appBar: AppBar(
           title: Text(
@@ -64,9 +68,10 @@ class _OrderSumState extends State<OrderSumPage> {
             color: Colors.red[600],
             textColor: Colors.white,
             onPressed: (){
-              //sendOrder();
+              print(globals.increment);
+              sendOrder();
               for(int i = 0; i < globals.categories.length; i++){
-                globals.categories[i]["choices"].forEach((choice) => (print(choice['selected'] = false)));
+                globals.categories[i]["choices"].forEach((choice) => (choice['selected'] = false));
               }
               Navigator.push(
                         context,

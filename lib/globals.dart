@@ -4,6 +4,7 @@ import 'main.dart';
 import 'ordersummary.dart';
 
 List<String> orderList = [];
+int increment = 0;
 
 List<dynamic> categories = [
   {
