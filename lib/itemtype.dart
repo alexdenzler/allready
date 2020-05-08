@@ -58,7 +58,7 @@ class _ItemTypeState extends State<ItemTypePage> {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => globals.bottomNavPages[index]));
+                    builder: (context) => globals.bottomNavPages[index]));  // gives bottom nav bar a destination based on data passed in
           });
         },
         backgroundColor: Colors.red[600],
@@ -75,14 +75,14 @@ Widget getItemTypeList(BuildContext context) {
         return new Container(
             child: ListTile(
           trailing: Icon(Icons.arrow_right, color: Colors.red[600], size: 40),
-          title: Text(globals.categories[index]["name"],
+          title: Text(globals.categories[index]["name"],  // builds list based on data passed in
               style: TextStyle(fontWeight: FontWeight.bold)),
           onTap: () {
             Navigator.push(
                 context,
                 MaterialPageRoute(
                     builder: (context) =>
-                        ChooseItem(category: globals.categories[index])));
+                        ChooseItem(category: globals.categories[index]))); // routes to page based on data passed in
           },
         ));
       });

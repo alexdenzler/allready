@@ -37,7 +37,7 @@ class _ChooseItemState extends State<ChooseItem> {
         centerTitle: true,
         backgroundColor: Colors.blueGrey[300],
       ),
-      body: ListView.builder(
+      body: ListView.builder(  // builds list based on data passed in from categories list in globals
           itemCount: category["choices"].length,
           itemBuilder: (BuildContext context, int index) {
             return Container(

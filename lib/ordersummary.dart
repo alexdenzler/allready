@@ -124,7 +124,7 @@ Widget getOrderList(BuildContext context) {
         return new Container(
             child: ListTile(
                 contentPadding: EdgeInsets.only(bottom: 1),
-                title: Text(globals.orderList[index],
+                title: Text(globals.orderList[index],  // retrieves selected items
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 15,
@@ -133,6 +133,7 @@ Widget getOrderList(BuildContext context) {
   return listView;
 }
 
+// Builds the order completed page
 class OrderComplete extends StatelessWidget{
   @override
   Widget build(BuildContext context){
@@ -187,22 +188,3 @@ class OrderComplete extends StatelessWidget{
     );
   }
 }
-
-// Code to reset the order and return to home page.
-
-            // onPressed: () {
-            //   setState(() {
-            //     Navigator.push(
-            //         context,
-            //         MaterialPageRoute(
-            //             builder: (context) => globals.bottomNavPages[0]));
-            //     globals.orderList = [];
-            //     for (var i in globals.categories) {
-            //       for (var j in i["choices"]) {
-            //         if (j["selected"] == true) {
-            //           j["selected"] = false;
-            //         }
-            //       }
-            //     }
-            //   });
-            // },
