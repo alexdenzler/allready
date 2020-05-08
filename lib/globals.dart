@@ -1,10 +1,12 @@
 library globals;
 
+import 'dart:math';
+
 import 'main.dart';
 import 'ordersummary.dart';
 
 List<String> orderList = [];
-int increment = 0;
+int increment = 1*Random.secure().nextInt(10000000);
 
 List<dynamic> categories = [
   {
