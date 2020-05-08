@@ -95,6 +95,13 @@ class _OrderSumState extends State<OrderSumPage> {
               textColor: Colors.white,
               onPressed: () {
                 globals.orderList = [];
+                for (var i in globals.categories) {
+                  for (var j in i["choices"]) {
+                    if (j["selected"] == true) {
+                      j["selected"] = false;
+                    }
+                  }
+                }
                 Navigator.push(
                           context,
                           MaterialPageRoute(
