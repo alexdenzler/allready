@@ -39,6 +39,8 @@ List<dynamic> categories = [
       {"name": "Turkey", "selected": false},
       {"name": "Salami", "selected": false},
       {"name": "Bacon", "selected": false},
+      {"name": "Grilled Chicken", "selected": false},
+      {"name": "Roast Beef", "selected": false}
     ]
   },
   {
@@ -49,7 +51,9 @@ List<dynamic> categories = [
       {"name": "Tomatoes", "selected": false},
       {"name": "Onions", "selected": false},
       {"name": "Cucumbers", "selected": false},
-      {"name": "Peppers", "selected": false}
+      {"name": "Green Peppers", "selected": false},
+      {"name": "Avocado", "selected": false},
+      {"name": "Black Olives", "selected": false}
     ]
   },
   {
@@ -59,7 +63,8 @@ List<dynamic> categories = [
       {"name": "Honey Mustard", "selected": false},
       {"name": "Mayo", "selected": false},
       {"name": "Chipotle Mayo", "selected": false},
-      {"name": "Hot Sauce", "selected": false}
+      {"name": "Hot Sauce", "selected": false},
+      {"name": "BBQ Sauce", "selected": false}
     ]
   }
 ];
