@@ -26,6 +26,7 @@ class _ItemTypeState extends State<ItemTypePage> {
     return Scaffold(
       backgroundColor: Colors.grey[500],
       appBar: AppBar(
+        leading: new Container(),
         title: Text(
           'AllReady',
           style: TextStyle(
